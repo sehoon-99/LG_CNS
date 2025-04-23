@@ -1,0 +1,1349 @@
+@import url('https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css');
+
+@font-face {
+    font-family: 'LG';
+    src: url(./LG\ Smart\ Regular.woff);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+    text-decoration: none;
+    color: white;
+    font-family: 'LG', sans-serif;
+
+
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+#wrapper {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    overflow: hidden;
+    background-color: #020417;
+}
+
+/* .bo {
+            border: 2px solid red;
+        } */
+
+.center {
+    position: relative;
+    left: 50%;
+
+}
+
+
+
+/* header nav bar style */
+#wrapHeader {
+    position: fixed;
+    width: 100%;
+    height: 8vw;
+    max-height: 100px;
+    z-index: 1000;
+    transition: background-color 0.3s;
+}
+
+#wrapper header {
+    overflow: hidden;
+    width: 98%;
+    height: 90px;
+    text-align: center;
+    position: relative;
+    top: 0;
+    left: 0;
+    margin: 0 auto;
+
+}
+
+header .logo {
+    position: relative;
+    float: left;
+    line-height: 90px;
+    width: 10%;
+    background: url(https://solution-dev.link/admin/static/kor/assets/images/icon/h-logo.png)no-repeat center/contain;
+    height: 70%;
+    margin-top: 1.15vw;
+    text-indent: -9999px;
+
+
+
+}
+
+#wrapper header .gnb {
+    float: left;
+    width: 50%;
+    position: relative;
+}
+
+.mainMenu {
+    position: relative;
+    float: left;
+    height: 90px;
+    margin-top: 1.2vw;
+    line-height: 60px;
+    width: 15%;
+    display: block;
+    margin-left: 2.8%;
+
+}
+
+.mainMenu a {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    font-size: 1.35vw;
+    font-weight: 600;
+    /* color: black; */
+
+
+
+}
+
+.scrollNav li:nth-child(1) a::after {
+    content: "";
+    position: relative;
+    display: block;
+    left: 92.5%;
+    width: 11%;
+    background-color: #515360;
+    height: 1%;
+    margin-top: -13.5%;
+
+}
+
+.scrollNav li:nth-child(2) a::after {
+    content: "";
+    position: relative;
+    display: block;
+    left: 93.5%;
+    width: 25%;
+    background-color: #515360;
+    height: 1%;
+    margin-top: -29.75%;
+
+}
+
+
+
+
+.scrollNav {
+    position: relative;
+    margin-top: 28px;
+    float: left;
+    width: 38%;
+    min-width: 180px;
+    height: 2.5vw;
+    border: 1px solid 262738;
+    background-color: #262738;
+    border-radius: 25px;
+    overflow: hidden;
+    margin-left: 20px;
+
+
+
+}
+
+.scrollNav li {
+    position: relative;
+
+
+}
+
+.scrollNav li a {
+    position: relative;
+    height: 50px;
+    float: left;
+    color: gray;
+    display: block;
+    font-size: 0.9vw;
+    line-height: 2.5vw;
+}
+
+.scrollNav li:nth-of-type(1) a {
+    width: 50%;
+}
+
+.scrollNav li:nth-of-type(2) a {
+    width: 23%;
+}
+
+.scrollNav li:nth-of-type(3) a {
+    width: 27%;
+}
+
+.right_menu {
+    background-color: #4739ac;
+    margin: 9px 0px;
+    width: 11.5%;
+    height: 5vw;
+    max-height: 70px;
+    float: right;
+    border-radius: 15PX;
+    /* text-decoration: underline; */
+    position: absolute;
+    right: 1.8%;
+    top: 8%;
+    overflow: hidden;
+
+}
+
+.right_menu .language {
+    position: relative;
+    border: 1px solid rgb(146, 146, 146);
+    width: 35%;
+    top: 22%;
+    left: 58%;
+    height: 60%;
+    border-radius: 10PX;
+    cursor: pointer;
+}
+
+.right_menu p {
+    position: absolute;
+    left: 10%;
+    top: 35%;
+    font-size: 1vw;
+}
+
+.right_menu .language span {
+    font-size: 1vw;
+    position: relative;
+    right: 5%;
+    top: 23%;
+}
+
+.right_menu .language a {
+    font-size: 1vw;
+    position: relative;
+    top: 16%;
+
+}
+
+#wrapper label {
+    position: absolute;
+    right: 30px;
+    top: 25px;
+    cursor: pointer;
+    display: none;
+
+}
+
+#wrapper input {
+    display: none;
+
+
+}
+
+#wrapper label span {
+    font-size: 3.0em;
+}
+
+.lettle_menu {
+    display: none;
+}
+
+
+
+
+
+
+/* sections style */
+
+
+
+/* #LG_CNS style */
+#wrapper #LG_CNS {
+
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background: url(./back.jpg)no-repeat center/cover;
+
+}
+
+#wrapper #LG_CNS article {}
+
+#wrapper #LG_CNS .LG_CNS_introduce {
+    width: 45%;
+    height: 40%;
+    margin-left: -48%;
+    position: relative;
+    bottom: -57%;
+    float: left;
+    overflow: hidden;
+    padding: 20px;
+    display: block;
+
+
+
+}
+
+#wrapper #LG_CNS .LG_CNS_introduce h1 {
+    font-size: 5.5vw;
+    padding-bottom: 20px;
+    line-height: 5vw;
+
+
+}
+
+#wrapper #LG_CNS .LG_CNS_introduce .line {
+    position: relative;
+    bottom: -5%;
+    width: 77%;
+    height: 1px;
+    background-color: #81828B;
+}
+
+#wrapper #LG_CNS .LG_CNS_introduce .desktop {
+    font-size: 1.25vw;
+    padding-top: 4.2%;
+    color: #CCCDD1;
+}
+
+#wrapper #LG_CNS .LG_CNS_introduce .mobile {
+    display: none;
+}
+
+.contents {
+    right: 2%;
+    bottom: -15%;
+    float: right;
+    width: 45%;
+    height: 80%;
+    position: relative;
+    display: block;
+}
+
+#wrapper #LG_CNS .contents article {
+    float: left;
+    background-color: rgba(78, 69, 113, 0.4);
+    border-radius: 15px;
+    /* border: 2px red solid; */
+    width: 49%;
+    height: 49%;
+    margin: 0.5%;
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.5s;
+}
+
+
+#wrapper #LG_CNS .contents article h1 {
+    position: absolute;
+    bottom: 7%;
+    left: 7%;
+    font-size: 1.6vw;
+}
+
+#wrapper #LG_CNS .contents article .desktop {
+    display: block;
+}
+
+#wrapper #LG_CNS .contents article .mobile {
+    display: none;
+}
+
+
+#wrapper #LG_CNS .contents article:nth-of-type(3) h1,
+#wrapper #LG_CNS .contents article:nth-of-type(4) h1 {
+    font-size: 1.9vw;
+
+}
+
+#wrapper #LG_CNS .contents article .icon {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    margin: 5% 8%;
+    transition: opacity 0.1;
+}
+
+#wrapper #LG_CNS .contents article:nth-of-type(1) .icon {
+    background: url(https://solution-dev.link/admin/static/kor/assets/images/icon/c-cloud-middelPlattform.svg)no-repeat center/cover;
+}
+
+#wrapper #LG_CNS .contents article:nth-of-type(2) .icon {
+    background: url(https://solution-dev.link/admin/static/kor/assets/images/icon/c-testingSolution.svg)no-repeat center/cover;
+}
+
+#wrapper #LG_CNS .contents article:nth-of-type(3) .icon {
+    background: url(https://solution-dev.link/admin/static/kor/assets/images/icon/c-devOn.svg)no-repeat center/cover;
+}
+
+#wrapper #LG_CNS .contents article:nth-of-type(4) .icon {
+    background: url(https://solution-dev.link/admin/static/kor/assets/images/icon/c-web3.svg)no-repeat center/cover;
+}
+
+#wrapper #LG_CNS .contents article p {
+    position: absolute;
+    bottom: 7%;
+    right: 7%;
+    font-size: 18px;
+    color: #918FAC;
+    font-weight: bold;
+}
+
+#wrapper #LG_CNS .contents .content1,
+#wrapper #LG_CNS .contents .content2,
+#wrapper #LG_CNS .contents .content3,
+#wrapper #LG_CNS .contents .content4 {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 15px;
+    opacity: 0;
+    transition: opacity 1s ease;
+
+}
+
+#wrapper #LG_CNS .contents .content1 h3,
+#wrapper #LG_CNS .contents .content2 h3,
+#wrapper #LG_CNS .contents .content3 h3,
+#wrapper #LG_CNS .contents .content4 h3 {
+    position: relative;
+    font-size: 23px;
+    padding: 5% 7%;
+    opacity: 0;
+}
+
+#wrapper #LG_CNS .contents .content1 .line,
+#wrapper #LG_CNS .contents .content2 .line,
+#wrapper #LG_CNS .contents .content3 .line,
+#wrapper #LG_CNS .contents .content4 .line {
+    content: "";
+    background-color: #81828B;
+    width: 100%;
+    height: 1px;
+    display: block;
+    opacity: 0.7;
+}
+
+#wrapper #LG_CNS .contents .content1 li,
+#wrapper #LG_CNS .contents .content2 li,
+#wrapper #LG_CNS .contents .content3 li,
+#wrapper #LG_CNS .contents .content4 li {
+    position: relative;
+    width: 98%;
+    height: 7.35vh;
+    background-color: #5547B2;
+    margin: 2.5px auto;
+    border-radius: 13px;
+    line-height: 7.5vh;
+    font-size: 1.25vw;
+    /* vw 디스플레이 크기가 줄어들면 글자도 같이 줄어든다. */
+    font-weight: 700;
+    padding-left: 5%;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+
+}
+
+#wrapper #LG_CNS .contents article li>p {
+    font-size: 0.75vw;
+    position: absolute;
+    bottom: -2%;
+    right: 7%;
+}
+
+
+#wrapper #LG_CNS .contents .content1 li:hover,
+#wrapper #LG_CNS .contents .content2 li:hover,
+#wrapper #LG_CNS .contents .content3 li:hover,
+#wrapper #LG_CNS .contents .content4 li:hover {
+    background-color: #3F3189;
+}
+
+#wrapper #LG_CNS .contents article:hover {
+    background-color: #594BBA;
+
+}
+
+#wrapper #LG_CNS .contents article:hover h1 {
+    opacity: 0;
+}
+
+#wrapper #LG_CNS .contents article:hover .content1,
+#wrapper #LG_CNS .contents article:hover .content2,
+#wrapper #LG_CNS .contents article:hover .content3,
+#wrapper #LG_CNS .contents article:hover .content4 {
+    background-color: #594BBA;
+    opacity: 1;
+}
+
+#wrapper #LG_CNS .contents article:hover .content1 h3,
+#wrapper #LG_CNS .contents article:hover .content1 li,
+#wrapper #LG_CNS .contents article:hover .content2 h3,
+#wrapper #LG_CNS .contents article:hover .content2 li,
+#wrapper #LG_CNS .contents article:hover .content3 h3,
+#wrapper #LG_CNS .contents article:hover .content3 li,
+#wrapper #LG_CNS .contents article:hover .content4 h3,
+#wrapper #LG_CNS .contents article:hover .content4 li {
+    opacity: 1;
+}
+
+#wrapper #LG_CNS .contents article:hover .subtitle {
+    display: none;
+}
+
+#wrapper #LG_CNS .contents article:hover .icon {
+    opacity: 0;
+}
+
+/* #event style */
+
+#event {
+    width: 100%;
+    height: 100vh;
+    float: left;
+    position: relative;
+    overflow: hidden;
+    background: url(./back2.jpg)no-repeat center/cover;
+
+}
+
+#event .video {
+    width: 29.7%;
+    height: 460px;
+    position: relative;
+    margin-left: -33%;
+    bottom: -15%;
+    border-radius: 20px;
+    background: url(https://d37v4gwq2080el.cloudfront.net/dev/upload/events/1721901547056_c-event-monachain.png) no-repeat center/contain;
+
+    left: 50%;
+}
+
+#event .event_introduce {
+    position: relative;
+    width: 30%;
+    height: 450px;
+    margin: 0px;
+    top: -300px;
+    left: 50%;
+    display: block;
+
+
+}
+
+#event .event_introduce h1 {
+    color: rgba(245, 245, 245, 0.466);
+}
+
+#event .event_introduce h1,
+h2 {
+    font-size: 2.15vw;
+    line-height: 2.8vw;
+}
+
+#event .event_introduce p {
+    font-size: 1.1vw;
+    line-height: 2.1vw;
+    padding-top: 18px;
+}
+
+
+
+#event .event_line::before {
+
+    content: "";
+    width: 66%;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.521);
+    display: block;
+    position: relative;
+    bottom: 180px;
+    left: calc(50% - 33%);
+
+
+}
+
+
+/* #news style */
+
+#news {
+    width: 100%;
+    height: 250vh;
+    position: relative;
+    overflow: hidden;
+    background-color: white;
+
+}
+
+#news h1 {
+    top: 180px;
+    height: 10%;
+    margin-left: -40%;
+    font-size: 40px;
+    color: black;
+
+}
+
+.newsWrapper {
+    position: relative;
+    width: 92%;
+    height: 90%;
+    top: 80px;
+    left: 50%;
+    margin-left: -36.5%;
+}
+
+#news article {
+    position: relative;
+    float: left;
+    width: 35%;
+    height: 30%;
+    margin: 0px 2.5%;
+    color: black;
+
+}
+
+#news article .days {
+    position: relative;
+    width: 115px;
+    height: 39px;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #5c5c5c;
+    background-color: #eaeaea;
+    padding-top: 10px;
+    text-align: center;
+
+}
+
+#news article h2 {
+    position: relative;
+    left: 0;
+    font-size: 1.6vw;
+    margin-top: 20px;
+    color: black;
+}
+
+#news article .picture {
+    position: relative;
+    width: 100%;
+    height: 55%;
+    margin: 5% 0%;
+    bottom: 5px;
+    border-radius: 15px;
+}
+
+
+#news article:nth-of-type(1) .picture {
+    background: url(https://d37v4gwq2080el.cloudfront.net/dev/upload/news/1721893107923_1667454322488_%EC%88%98%ED%98%91.JPG)no-repeat center/cover;
+}
+
+#news article:nth-of-type(2) .picture {
+    background: url(https://d37v4gwq2080el.cloudfront.net/dev/upload/news/1721892607461_c-news-lena-01.png)no-repeat center/cover;
+}
+
+#news article:nth-of-type(3) .picture {
+    background: url(https://d37v4gwq2080el.cloudfront.net/dev/upload/news/1721892515435_c-news-lena-02.png)no-repeat center/cover;
+}
+
+#news article:nth-of-type(4) .picture {
+    background: url(https://d37v4gwq2080el.cloudfront.net/dev/upload/news/1721892460306_c-news-lena-03.png)no-repeat center/cover;
+}
+
+#news article:nth-of-type(5) .picture {
+    background: url(https://d37v4gwq2080el.cloudfront.net/dev/upload/news/1721892391933_1638499227339_lena2.jpg)no-repeat center/cover;
+}
+
+#news article:nth-of-type(6) .picture {
+    background: url(https://d37v4gwq2080el.cloudfront.net/dev/upload/news/1721892300433_1666587115915_passta.JPG)no-repeat center/cover;
+}
+
+
+
+/* footer style*/
+#wrapper footer {
+    background-color: black;
+    width: 100%;
+    height: 250px;
+}
+
+#wrapper footer div {
+    width: 80%;
+    margin: 0 auto;
+    padding: 60px;
+}
+
+#wrapper footer h2 {
+    font-size: 45px;
+}
+
+#wrapper footer p {
+    padding: 10px;
+    font-size: 15px;
+}
+
+
+
+
+
+
+
+
+
+
+/* 반응형 웹 style */
+
+@media (max-width: 1500px) {
+    #event .event_introduce {
+        top: -210px;
+    }
+
+
+    /* .scrollNav {
+        position: relative;
+        margin-top: 4%;
+    } */
+}
+
+
+
+@media (max-width: 1200px) {
+    .scrollNav {
+        position: relative;
+        margin-top: 3vw;
+        float: left;
+        width: 38%;
+        min-width: 180px;
+        height: 2.5vw;
+        border: 1px solid 262738;
+        background-color: #262738;
+        border-radius: 25px;
+        overflow: hidden;
+        margin-left: 20px;
+        /* border: 1px solid red; */
+
+    }
+
+    .mainMenu {
+        margin-top: 1.5vw;
+    }
+}
+
+@media (max-width: 999px) {
+    #wrapHeader {
+        position: fixed;
+        width: 100%;
+        height: 100px;
+        z-index: 1000;
+        transition: background-color 0.3s;
+    }
+
+    #wrapper header .gnb {
+        display: none;
+    }
+
+    .right_menu {
+        display: none;
+    }
+
+    header .logo {
+
+        width: 18%;
+        height: 95%;
+        margin-left: 5%;
+    }
+
+    #wrapper label {
+        display: block;
+    }
+
+    @keyframes slideIn {
+        0% {
+            right: -100%;
+            /* 메뉴가 화면 밖에 위치 */
+        }
+
+        100% {
+            right: 0;
+            /* 메뉴가 화면에 정상적으로 표시 */
+        }
+    }
+
+    @keyframes slideOut {
+        0% {
+            right: 0;
+            /* 메뉴가 화면에 정상적으로 표시 */
+        }
+
+        100% {
+            right: -100%;
+            /* 메뉴가 화면 밖으로 이동 */
+        }
+    }
+
+    #wrapper .lettle_menu {
+        position: absolute;
+        float: right;
+        width: 80%;
+        height: 100vh;
+        background-color: #020417;
+        right: 0px;
+        right: -100%;
+        /* 처음에는 메뉴가 화면 밖에 위치 */
+        top: 0px;
+    }
+
+    #wrapper input[type="checkbox"]:checked~.lettle_menu {
+        display: block;
+        /* 체크박스가 체크되면 메뉴를 표시 */
+        animation: slideIn 0.5s ease forwards;
+        /* 슬라이드 인 애니메이션 */
+    }
+
+    #wrapper input[type="checkbox"]:not(:checked)~.lettle_menu {
+        display: none;
+        /* 체크박스가 체크되지 않으면 메뉴를 표시 */
+        animation: slideOut 0.5s ease forwards;
+        /* 슬라이드 아웃 애니메이션 */
+    }
+
+    .lettle_menu .lettle_menu_wrapper {
+        position: relative;
+        top: 15%;
+        width: 80%;
+        height: 50vh;
+        overflow-y: scroll;
+        margin: 0 auto;
+
+    }
+
+    #wrapper .lettle_menu ul li {
+        width: 100%;
+        line-height: 180px;
+
+        font-size: 3em;
+    }
+
+    #wrapper .lettle_menu ul li:first-child {
+        line-height: 60px;
+    }
+
+    #wrapper .lettle_menu ul li:last-child {
+        line-height: 60px;
+    }
+
+    #wrapper .lettle_menu label {
+        z-index: 99;
+    }
+
+    .lettle_menu .language {
+        position: absolute;
+        border: 1px solid rgba(255, 255, 255, 0.548);
+        width: 200px;
+        height: 90px;
+        left: 11%;
+        bottom: 23%;
+        font-size: 2.3em;
+        line-height: 115px;
+        border-radius: 22px;
+    }
+
+    .lettle_menu .language span {
+        font-size: 1.4em;
+    }
+
+    .lettle_menu .language {
+        padding-left: 15px;
+    }
+
+    .lettle_menu .language p {
+        position: absolute;
+        bottom: -18%;
+        left: 40%;
+
+    }
+
+    /* LG_CNS style */
+    #wrapper #LG_CNS {
+        background: url(https://solution-dev.link/admin/static/kor/assets/images/main/c-visual-mo.png)no-repeat center/cover;
+        width: 100%;
+        height: 1574px;
+
+    }
+
+    #wrapper #LG_CNS .LG_CNS_introduce {
+        width: 95%;
+        height: 40%;
+        margin-left: -46.5%;
+        position: relative;
+        bottom: -10.6%;
+        float: left;
+        overflow: hidden;
+        display: block;
+
+
+
+
+    }
+
+    #wrapper #LG_CNS .LG_CNS_introduce h1 {
+        font-size: 10.5vw;
+        padding-bottom: 4%;
+        line-height: 9.5vh;
+
+
+
+    }
+
+    #wrapper #LG_CNS .LG_CNS_introduce .line {
+        position: relative;
+        bottom: -1%;
+        width: 98%;
+        height: 1px;
+        background-color: #81828B;
+    }
+
+    #wrapper #LG_CNS .LG_CNS_introduce .desktop {
+        display: none;
+    }
+
+    #wrapper #LG_CNS .LG_CNS_introduce .mobile {
+        font-size: 4.2vw;
+        padding-top: 5.8%;
+        color: #CCCDD1;
+        display: block;
+    }
+
+    .contents {
+        width: 94%;
+        bottom: 8%;
+        left: 50%;
+        margin-left: -45%;
+        position: absolute;
+        display: block;
+
+    }
+
+    #wrapper #LG_CNS .contents article {
+        background-color: #2B2548;
+        opacity: 0.9;
+        border-radius: 35px;
+        /* border: 2px red solid; */
+        width: 94%;
+        height: 5%;
+        cursor: pointer;
+        position: relative;
+        transition: background-color 0.5s;
+        margin-bottom: 6%;
+
+    }
+
+
+    #wrapper #LG_CNS .contents article h1 {
+        position: absolute;
+        bottom: 18%;
+        left: 6%;
+        font-size: 4.1vw;
+    }
+
+    #wrapper #LG_CNS .contents article:nth-of-type(3) h1,
+    #wrapper #LG_CNS .contents article:nth-of-type(4) h1 {
+        font-size: 4.1vw;
+
+    }
+
+    #wrapper #LG_CNS .contents article .desktop {
+        display: none;
+    }
+
+    #wrapper #LG_CNS .contents article .mobile {
+        display: block;
+    }
+
+    #wrapper #LG_CNS .contents article p {
+        position: absolute;
+        bottom: 18%;
+        right: 6%;
+        font-size: 4.1vw;
+        color: #918FAC;
+        font-weight: bold;
+
+    }
+
+    #wrapper #LG_CNS .contents article .icon {
+        width: 48px;
+        height: 48px;
+        margin: 5% 6%;
+    }
+
+    #wrapper #LG_CNS .contents .content1,
+    #wrapper #LG_CNS .contents .content2,
+    #wrapper #LG_CNS .contents .content3,
+    #wrapper #LG_CNS .contents .content4 {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        border-radius: 35px;
+        opacity: 0;
+        transition: opacity 0.5s ease;
+
+    }
+
+    #wrapper #LG_CNS .contents .content1 h3,
+    #wrapper #LG_CNS .contents .content2 h3,
+    #wrapper #LG_CNS .contents .content3 h3,
+    #wrapper #LG_CNS .contents .content4 h3 {
+        position: relative;
+        font-size: 38px;
+        padding: 5% 6%;
+        opacity: 0;
+    }
+
+    #wrapper #LG_CNS .contents .content1 .line,
+    #wrapper #LG_CNS .contents .content2 .line,
+    #wrapper #LG_CNS .contents .content3 .line,
+    #wrapper #LG_CNS .contents .content4 .line {
+        display: none;
+    }
+
+    #wrapper #LG_CNS .contents .content1 li,
+    #wrapper #LG_CNS .contents .content2 li,
+    #wrapper #LG_CNS .contents .content3 li,
+    #wrapper #LG_CNS .contents .content4 li {
+        position: relative;
+        float: left;
+        height: 2%;
+        background-color: #5547B2;
+        border-radius: 30px;
+        font-size: 4vw;
+        /* vw 디스플레이 크기가 줄어들면 글자도 같이 줄어든다. */
+        font-weight: 700;
+        opacity: 0;
+        transition: opacity 0.2s ease;
+        text-align: center;
+        padding-left: 0;
+
+
+    }
+
+    #wrapper #LG_CNS .contents .content1 p,
+    #wrapper #LG_CNS .contents .content2 p,
+    #wrapper #LG_CNS .contents .content3 p,
+    #wrapper #LG_CNS .contents .content4 p {
+        display: none;
+    }
+
+    #wrapper #LG_CNS .contents .content1 li {
+        width: 31%;
+        margin: 3% 1%;
+        left: 0.5%;
+    }
+
+    #wrapper #LG_CNS .contents .content2 li {
+        width: 46%;
+        margin: 3% 1%;
+        left: 2%;
+    }
+
+    #wrapper #LG_CNS .contents .content3 li {
+        width: 31%;
+        margin: 3% 1%;
+        left: 0.5%;
+        
+    }
+
+    #wrapper #LG_CNS .contents .content4 li {
+        width: 94%;
+        margin: 3% 0%;
+        left: 3%;
+        
+    }
+
+    /* event style */
+    #event {
+        width: 100%;
+        height: 250vh;
+        position: relative;
+        overflow: hidden;
+        background: url(https://solution-dev.link/admin/static/kor/assets/images/main/c-event-bg.png)no-repeat center/cover;
+        bottom: -500px;
+    }
+
+    #event .video {
+        width: 100%;
+        height: 30%;
+        position: relative;
+        margin-left: 0px;
+        background-size: 100%;
+        bottom: 10px;
+        border-radius: 0px;
+        background: url(https://d37v4gwq2080el.cloudfront.net/dev/upload/events/1721901547056_c-event-monachain.png) no-repeat center/75%;
+        left: 0;
+    }
+
+
+    #event .event_introduce {
+        position: relative;
+        width: 100%;
+        height: 450px;
+        bottom: 0px;
+        left: 0;
+        margin-top: 200px;
+        margin-left: 100px;
+
+    }
+
+    #event .event_introduce h1 {
+        color: rgba(245, 245, 245, 0.466);
+    }
+
+    #event .event_introduce h1 {
+        font-size: 8vw;
+        line-height: 9vw;
+    }
+
+    #event .event_introduce h2 {
+        font-size: 6.5vw;
+        line-height: 9vw;
+    }
+
+    #event .event_introduce p {
+        margin-top: 5%;
+
+        width: 80%;
+        font-size: 3.75vw;
+        line-height: 7vw;
+
+
+    }
+
+
+
+    #event .event_line::before {
+
+        content: "";
+        width: 88%;
+        height: 1px;
+        background-color: rgba(255, 255, 255, 0.521);
+        display: block;
+        position: relative;
+        bottom: -270px;
+        left: calc(50% - 44%);
+
+    }
+
+    /* footer style*/
+    #wrapper footer {
+        background-color: black;
+        width: 100%;
+        height: 450px;
+    }
+
+    #wrapper footer div {
+        width: 100%;
+        margin: 30px auto;
+        padding: 70px;
+    }
+
+    #wrapper footer h2 {
+        font-size: 10vw;
+        bottom: -30px;
+    }
+
+    #wrapper footer hr {
+        position: absolute;
+        bottom: 200px;
+        width: 100%;
+        left: 0px;
+        opacity: 0.2;
+    }
+
+    #wrapper footer p:nth-of-type(1) {
+        position: relative;
+        bottom: -35px;
+        padding: 0;
+
+    }
+
+    #wrapper footer p:nth-of-type(2) {
+        position: absolute;
+        bottom: 80px;
+        font-size: 3.5vw;
+    }
+
+    #news {
+        width: 100%;
+        height: 250vh;
+        position: relative;
+        overflow: hidden;
+        background-color: white;
+
+    }
+
+
+    #news h1 {
+        top: 80px;
+        height: 200px;
+        margin-left: -35%;
+        font-size: 40px;
+        color: black;
+
+    }
+
+    .newsWrapper {
+        position: relative;
+        width: 92%;
+        height: 50%;
+        top: 0px;
+        left: 50%;
+        margin-left: -36.5%;
+    }
+
+    #news article {
+        position: relative;
+        width: 80%;
+        height: 30%;
+        margin: 0px 2.5%;
+        color: black;
+
+    }
+
+    #news article .days {
+        position: relative;
+        width: 115px;
+        height: 39px;
+        border-radius: 6px;
+        font-size: 16px;
+        font-weight: 600;
+        color: #5c5c5c;
+        background: #eaeaea;
+        padding-top: 10px;
+        text-align: center;
+
+    }
+
+    #news article h2 {
+        position: relative;
+        left: 0;
+        font-size: 2.5vw;
+        margin-top: 20px;
+        color: black;
+    }
+
+    #news article .picture {
+        position: relative;
+        width: 100%;
+        height: 55%;
+        margin: 5% 0%;
+        bottom: 5px;
+        border-radius: 15px;
+    }
+
+
+}
+
+@media (max-width: 780px) {
+
+    #wrapper #LG_CNS .contents .content1 li {
+        width: 31%;
+        margin: 0 1%;
+        left: 0.5%;
+        margin-top: 7%;
+    }
+
+    #wrapper #LG_CNS .contents .content2 li {
+        width: 46%;
+        margin: 0 1%;
+        left: 2%;
+        margin-top: 7%;
+    }
+
+    #wrapper #LG_CNS .contents .content3 li {
+        width: 31%;
+        margin: 0 1%;
+        left: 0.5%;
+        margin-top: 7%;
+        
+    }
+
+    #wrapper #LG_CNS .contents .content4 li {
+        width: 94%;
+        margin: 0 0%;
+        left: 3%;
+        margin-top: 7%;
+    }
+
+}
+
+@media (max-width: 520px) {
+
+    #wrapper #LG_CNS .contents .content2 li {
+        width: 46%;
+        margin: 0 1%;
+        left: 2%;
+        margin-top: 18%;
+    }
+
+    #wrapper #LG_CNS .contents .content3 li {
+        width: 31%;
+        margin: 0 1%;
+        left: 0.5%;
+        margin-top: 15%;
+        
+    }
+
+    #wrapper #LG_CNS .contents .content4 li {
+        width: 94%;
+        margin: 0 0%;
+        left: 3%;
+        margin-top: 15%;
+    }
+
+    #event .event_introduce h1 {
+        font-size: 5vw;
+        padding-right: 50px;
+        line-height: 6vw;
+    }
+
+    #event .event_introduce h2 {
+        font-size: 5vw;
+        padding-right: 50px;
+        line-height: 7vw;
+    }
+
+    #event .event_introduce p {
+        margin-top: 5%;
+        padding-right: 50px;
+        width: 80%;
+        font-size: 3.75vw;
+        line-height: 7vw;
+
+
+    }
+
+
+    
+
+}
+
+@media (max-width: 390px) {
+    #event .event_introduce {
+        position: relative;
+        width: 100%;
+        height: 450px;
+        bottom: 0px;
+        left: 0;
+        margin-top: 200px;
+        margin-left: 50px;
+        
+
+    }
+
+    
+
+}
