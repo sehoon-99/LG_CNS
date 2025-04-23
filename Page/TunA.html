@@ -1,0 +1,1802 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TunA</title>
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="https://solution.lgcns.com/admin/static/front/images/favicon.png">
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&" />
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/e3b2fbc156.js" crossorigin="anonymous"></script>
+    <script src="js/prefixfree.min.js"></script>
+
+    <style>
+        @font-face {
+            font-family: 'LG';
+            src: url(./LG\ Smart\ Regular.woff);
+
+        }
+
+        @font-face {
+            font-family: 'LG_Blod';
+            src: url(./LG\ Smart\ Bold.woff);
+        }
+
+
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            box-sizing: border-box;
+            text-decoration: none;
+            font-family: 'LG', sans-serif;
+            color: white;
+        }
+
+        .bo {
+            border: 1px solid red;
+        }
+
+        /* header nav bar style */
+        #wrapHeader {
+            position: fixed;
+            width: 100%;
+            height: 7.5vw;
+            max-height: 100px;
+            z-index: 1000;
+            transition: background-color 0.3s;
+        }
+
+        #wrapper header {
+            overflow: hidden;
+            width: 98%;
+            height: 90px;
+            text-align: center;
+            position: relative;
+            top: 0;
+            left: 0;
+            margin: 0 auto;
+
+        }
+
+        header .logo {
+            position: relative;
+            float: left;
+            line-height: 90px;
+            width: 10%;
+            background: url(https://solution-dev.link/admin/static/kor/assets/images/icon/h-logo.png)no-repeat center/contain;
+            height: 70%;
+            margin-top: 1.15vw;
+            text-indent: -9999px;
+
+
+
+        }
+
+        #wrapper header .gnb {
+            float: left;
+            width: 50%;
+            position: relative;
+
+        }
+
+        .mainMenu {
+            position: relative;
+            float: left;
+            height: 90px;
+            margin-top: 1.2vw;
+            line-height: 60px;
+            width: 15%;
+            display: block;
+            margin-left: 2.8%;
+
+        }
+
+        .mainMenu a {
+            position: relative;
+            display: block;
+            width: 100%;
+            height: 100%;
+            font-size: 1.35vw;
+            font-weight: 600;
+            /* color: black; */
+
+
+
+        }
+
+
+
+        .scrollNav {
+            position: relative;
+            margin-top: 28px;
+            float: left;
+            width: 75%;
+            min-width: 300px;
+            height: 2.5vw;
+            border: 1px solid 262738;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 25px;
+            overflow: hidden;
+            margin-left: 20px;
+            min-height: 35px;
+        }
+
+        .scrollNav li {
+            position: relative;
+            width: 16.66%;
+            float: left;
+            padding: 0px;
+
+
+        }
+
+        .scrollNav li a {
+            position: relative;
+            height: 100%;
+            float: left;
+            color: #b6b6b6;
+            display: block;
+            font-size: 0.95vw;
+            padding: 12px 0px;
+            width: 100%;
+            font-weight: 500;
+            z-index: 99;
+            font-family: 'LG_Blod', sans-serif;
+        }
+
+        .scrollNav li::before {
+            content: "";
+            width: 0.8vw;
+            height: 1px;
+            background-color: #b6b6b650;
+            position: absolute;
+            margin-left: -5%;
+            top: 50%;
+            display: block;
+        }
+
+        .scrollNav li:nth-of-type(1)::before {
+            content: none;
+        }
+
+        .scrollNav li:nth-of-type(1) {
+            position: relative;
+            width: 13%;
+        }
+
+        .scrollNav li:nth-of-type(2) {
+            position: relative;
+            width: 17%;
+        }
+
+        .scrollNav li:nth-of-type(3) {
+            position: relative;
+            width: 15%;
+        }
+
+        .scrollNav li:nth-of-type(4) {
+            position: relative;
+            width: 24%
+        }
+
+
+        .scrollNav li:nth-of-type(5) {
+            position: relative;
+            width: 18%;
+        }
+
+        .scrollNav li:nth-of-type(6) {
+            position: relative;
+            width: 13%;
+
+        }
+
+        .right_menu {
+            background-color: #4739ac;
+            margin: 9px 0px;
+            width: 11.5%;
+            height: 5vw;
+            max-height: 70px;
+            float: right;
+            border-radius: 15PX;
+            /* text-decoration: underline; */
+            position: absolute;
+            right: 1.8%;
+            top: 8%;
+            overflow: hidden;
+
+        }
+
+
+        .right_menu .language {
+            position: relative;
+            border: 1px solid rgb(146, 146, 146);
+            width: 35%;
+            top: 22%;
+            left: 58%;
+            height: 60%;
+            border-radius: 10PX;
+            cursor: pointer;
+        }
+
+        .right_menu p {
+            position: absolute;
+            left: 10%;
+            top: 35%;
+            font-size: 1vw;
+        }
+
+        .right_menu .language span {
+            font-size: 1vw;
+            position: relative;
+            right: 5%;
+            top: 23%;
+        }
+
+        .right_menu .language a {
+            font-size: 1vw;
+            position: relative;
+            top: 16%;
+
+        }
+
+        #wrapper label {
+            position: absolute;
+            right: 30px;
+            top: 25px;
+            cursor: pointer;
+            display: none;
+
+        }
+
+        #wrapper input {
+            display: none;
+
+
+        }
+
+        #wrapper label span {
+            font-size: 3.0em;
+        }
+
+        .lettle_menu {
+            display: none;
+        }
+
+
+
+
+
+
+        /* #about style */
+        /* #about style */
+        /* #about style */
+        /* #about style */
+        /* #about style */
+        #about {
+            width: 100%;
+            height: 41vw;
+            background: url(https://d37v4gwq2080el.cloudfront.net/prd/upload/sol/1717476203788_c-visual-tuna.png)no-repeat center/cover;
+            position: relative;
+
+        }
+
+        #about .about_introduce {
+            top: 6vw;
+            position: relative;
+            text-align: center;
+        }
+
+        #about .about_introduce h1 {
+
+            font-size: 6.3vw;
+            margin-bottom: 1.1vw;
+        }
+
+        #about .about_introduce .line {
+            width: 20vw;
+            height: 1px;
+            background-color: white;
+            opacity: 0.6;
+            margin: 0 auto;
+        }
+
+        #about .about_introduce p {
+            margin-top: 1.2vw;
+            font-size: 1.25vw;
+            line-height: 2.2vw;
+        }
+
+        /* #Resources style */
+        /* #Resources style */
+        /* #Resources style */
+        /* #Resources style */
+        /* #Resources style */
+        #Resources {
+            position: relative;
+            width: 100%;
+            height: 41vw;
+            background-color: #f5f5f5;
+            overflow: hidden;
+        }
+
+        #Resources .ResourcesWrap {
+            position: relative;
+            width: 90%;
+            height: 100%;
+            /* left: calc(50% - 35%); */
+            margin-left: 17%;
+            bottom: 0;
+            overflow: hidden;
+        }
+
+        #Resources .ResourcesWrap h2 {
+            margin-top: 7.5vw;
+            font-size: 2.3vw;
+            position: relative;
+            color: black;
+        }
+
+        #Resources .ResourcesWrap .downloadBox {
+            position: relative;
+            width: 100%;
+            height: 40%;
+            display: flex;
+            margin-top: 3%;
+
+        }
+
+        #Resources .ResourcesWrap .downloadBox div {
+            position: relative;
+            width: 25%;
+            height: 100%;
+
+        }
+
+        #Resources .ResourcesWrap .downloadBox div .img {
+            width: 88%;
+            height: 65%;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px 0px rgb(170, 170, 170);
+
+        }
+
+        #Resources .ResourcesWrap .downloadBox div:nth-of-type(1) .img {
+            background: url(https://d37v4gwq2080el.cloudfront.net/dev/upload/download/1721718406060_2.png)no-repeat center/cover;
+        }
+
+        #Resources .ResourcesWrap .downloadBox div:nth-of-type(2) .img {
+            background: url(https://d37v4gwq2080el.cloudfront.net/dev/upload/download/1721727191234_1.png)no-repeat center/cover;
+        }
+
+
+        #Resources .ResourcesWrap .downloadBox div h3,
+        #Resources .ResourcesWrap .downloadBox div p {
+            color: black;
+            position: relative;
+            left: 1%;
+        }
+
+        #Resources .ResourcesWrap .downloadBox div h3 {
+            font-size: 1.7vw;
+            margin-top: 3.5%;
+        }
+
+        #Resources .ResourcesWrap .downloadBox div p {
+            font-size: 0.95vw;
+            margin-top: 2%;
+            font-weight: 700;
+            color: #626262;
+
+        }
+
+        #Resources .ResourcesWrap .downloadBox div .icon {
+            width: 1.5vw;
+            height: 1.5vw;
+            background: url(https://solution-dev.link/admin/static/kor/assets/images/icon/c-download-bk.svg)no-repeat center/cover;
+            position: absolute;
+            right: 12%;
+            bottom: 8.5%;
+            cursor: pointer;
+        }
+
+        #Resources .ResourcesWrap .line {
+            width: 74%;
+            height: 1px;
+            position: relative;
+            background-color: #7A7A7A;
+            margin-top: 3%;
+        }
+
+        #Resources .btn {
+            position: relative;
+            width: 10%;
+            bottom: -3%;
+            left: 67.2%;
+
+        }
+
+        #Resources .btn i {
+            margin-right: 0.5vw;
+            position: relative;
+            /* left: 0; */
+            font-size: 2.6vw;
+            color: #7A7A7A;
+            cursor: pointer;
+            opacity: 0;
+        }
+
+        /* #Release_Notes style */
+        /* #Release_Notes style */
+        /* #Release_Notes style */
+        /* #Release_Notes style */
+        /* #Release_Notes style */
+
+        #Release_Notes {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            background-color: white;
+        }
+
+        #Release_Notes .Release_NotesWrap {
+            width: 67%;
+            height: 100%;
+            margin: 0 auto;
+        }
+
+        #Release_Notes .Release_NotesWrap h2 {
+            color: black;
+            font-size: 30px;
+        }
+
+        #Release_Notes .Release_NotesWrap h2:nth-of-type(1) {
+            padding-top: 10%;
+            font-size: 50px;
+        }
+
+        #Release_Notes .Release_NotesWrap h2:nth-of-type(2),
+        #Release_Notes .Release_NotesWrap h2:nth-of-type(3),
+        #Release_Notes .Release_NotesWrap h2:nth-of-type(4),
+        #Release_Notes .Release_NotesWrap h2:nth-of-type(5),
+        #Release_Notes .Release_NotesWrap h2:nth-of-type(6) {
+            padding-top: 35px;
+        }
+
+        #Release_Notes .Release_NotesWrap .line {
+            width: 100%;
+            height: 1px;
+            position: relative;
+            background-color: #7A7A7A;
+            margin-top: 35px;
+        }
+
+        /* Event style */
+        /* Event style */
+        /* Event style */
+        /* Event style */
+        /* Event style */
+
+        #Event {
+            position: relative;
+            width: 100%;
+            height: 50vw;
+            background: url(../back2.jpg)no-repeat center/cover;
+        }
+
+        #Event .Eventwarp {
+            width: 70%;
+            height: 100%;
+            margin: 0 auto;
+            position: relative;
+            display: flex;
+
+
+        }
+
+        #Event h2 {
+            font-size: 2.5vw;
+            position: relative;
+            top: 0;
+            color: #7A7A7A
+        }
+
+        #Event h3 {
+            font-size: 2.3vw;
+            position: relative;
+            padding: 0;
+        }
+
+        #Event p {
+            margin-top: 8%;
+            font-size: 1.05vw;
+            position: relative;
+            float: left;
+            line-height: 2vw;
+        }
+
+        #Event .EventImg {
+            width: 45%;
+            height: 50%;
+            background: url(https://d37v4gwq2080el.cloudfront.net/prd/upload/events/1717476522164_c-event-tunA.png)no-repeat center/cover;
+            position: relative;
+            top: 20%;
+            margin-right: 4%;
+
+        }
+
+        #Event .EventBox {
+            width: 48%;
+            height: 50%;
+            position: relative;
+            top: 20%;
+            margin-left: 4%;
+        }
+
+        #Event .line {
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            background-color: #f5f5f5;
+            opacity: 0.6;
+            margin: 0 auto;
+            z-index: 99;
+            bottom: 20%;
+        }
+
+
+
+
+        /* #References style */
+        /* #References style */
+        /* #References style */
+        /* #References style */
+        /* #References style */
+        /* #References style */
+
+        #References {
+            position: relative;
+            width: 100%;
+            height: 60vw;
+            max-height: 100vh;
+            background-color: aliceblue;
+            overflow-x: hidden;
+        }
+
+        #References h2 {
+            margin-top: 7.5vw;
+            font-size: 2.8vw;
+            position: relative;
+            color: black;
+            left: 17%;
+
+        }
+
+        #References .ReferencesImg {
+            margin-top: 3%;
+            position: relative;
+            width: 200%;
+            height: 50%;
+            /* border: 1px solid red; */
+            display: flex;
+            justify-content: space-around;
+        }
+
+        #References .ReferencesImg .company {
+            float: left;
+            width: 15%;
+            height: 80%;
+            border-radius: 15px;
+            margin-top: 1%;
+            margin-right: 1%;
+            margin-left: 1%;
+            box-shadow: 2px 2px 10px 0px rgb(170, 170, 170);
+            background-color: white;
+
+
+        }
+
+        #References .ReferencesImg .company .img {
+            position: relative;
+            width: 80%;
+            height: 30%;
+            margin: 0 auto;
+            top: 10%;
+
+        }
+
+        #References .ReferencesImg .company:nth-of-type(1) .img {
+            background: url(https://d37v4gwq2080el.cloudfront.net/prd/upload/ref/1717470417732_c-lg.png)no-repeat center/contain;
+        }
+
+        #References .ReferencesImg .company:nth-of-type(2) .img {
+            background: url(https://d37v4gwq2080el.cloudfront.net/prd/upload/ref/1717483963945_c-gsbuild.png)no-repeat center/contain;
+        }
+
+        #References .ReferencesImg .company:nth-of-type(3) .img {
+            background: url(https://d37v4gwq2080el.cloudfront.net/prd/upload/ref/1717470656847_c-gsretail.png)no-repeat center/contain;
+        }
+
+        #References .ReferencesImg .company:nth-of-type(4) .img {
+            background: url(https://d37v4gwq2080el.cloudfront.net/prd/upload/ref/1717480525721_c-kookminbank.png)no-repeat center/contain;
+        }
+
+        #References .ReferencesImg .company:nth-of-type(5) .img {
+            background: url(https://d37v4gwq2080el.cloudfront.net/prd/upload/ref/1717483790539_c-samsungDrive.png)no-repeat center/contain;
+        }
+
+        #References .ReferencesImg .company:nth-of-type(6) .img {
+            background: url(https://d37v4gwq2080el.cloudfront.net/dev/upload/ref/1721970053673_c-komsco.png)no-repeat center/contain;
+        }
+
+        #References .ReferencesImg .company:nth-of-type(7) .img {
+            background: url(https://d37v4gwq2080el.cloudfront.net/prd/upload/ref/1717470631378_c-pantos.png)no-repeat center/contain;
+        }
+
+        #References .ReferencesImg .company:nth-of-type(8) .img {
+            background: url(https://d37v4gwq2080el.cloudfront.net/prd/upload/ref/1717483990768_c-koreatax.png)no-repeat center/contain;
+        }
+
+        #References .ReferencesImg .company h3 {
+            position: relative;
+            font-size: 1.1vw;
+            color: black;
+            text-align: center;
+            margin-top: 10%;
+        }
+
+        #References .ReferencesImg .company p {
+            position: relative;
+            color: black;
+            text-align: center;
+            font-size: 0.8vw;
+            padding: 3% 12%;
+        }
+
+        #References .line {
+            position: relative;
+            width: 67%;
+            height: 1px;
+            background-color: #626262;
+            opacity: 0.6;
+            margin: 0 auto;
+        }
+
+        #References i {
+            margin-right: 0.5vw;
+            margin-top: 1.7%;
+            position: relative;
+            font-size: 2.6vw;
+            left: 77.5%;
+            cursor: pointer;
+            color: #7A7A7A;
+            cursor: pointer;
+            z-index: 99;
+        }
+
+        /* #News style */
+        /* #News style */
+        /* #News style */
+        /* #News style */
+        /* #News style */
+        /* #News style */
+        #News {
+            position: relative;
+            width: 100%;
+            height: 60vw;
+            max-height: 100vh;
+            border: 1px solid white;
+            overflow: hidden;
+        }
+
+        #News h2 {
+            margin-top: 7%;
+            font-size: 2.8vw;
+            position: relative;
+            color: black;
+            left: 17%;
+        }
+
+        #News .newsWrap {
+            margin-top: 3%;
+            position: relative;
+            width: 200%;
+            height: 55%;
+            margin-left: 17%;
+            bottom: 0;
+            overflow: hidden;
+            display: flex;
+
+        }
+
+        #News .newsWrap .content {
+            position: relative;
+            width: 15%;
+            height: 100%;
+            margin-right: 1.25%;
+            /* border: 1px solid black; */
+        }
+
+        #News .newsWrap .date {
+            position: relative;
+            width: 5.5vw;
+            height: 2vw;
+            border-radius: 6px;
+            font-size: 0.8vw;
+            font-weight: 600;
+            color: #5c5c5c;
+            background-color: #eaeaea;
+            padding-top: 0.5vw;
+            text-align: center;
+        }
+
+        #News .newsWrap h3 {
+            margin-top: 2%;
+            color: black;
+            font-size: 1.7vw;
+        }
+
+        #News .newsWrap .img {
+            margin-top: 5%;
+            width: 100%;
+            height: 60%;
+            border-radius: 15px;
+            box-shadow: 2px 2px 10px 0px rgb(170, 170, 170);
+        }
+
+        #News .newsWrap :nth-of-type(1) .img {
+            background: url(https://d37v4gwq2080el.cloudfront.net/dev/upload/news/1721878006944_1638499120213_tuna_3.jpg)no-repeat center/cover;
+
+        }
+
+        #News .newsWrap :nth-of-type(2) .img {
+            background: url(https://d37v4gwq2080el.cloudfront.net/dev/upload/news/1721877911235_1638499106638_tuna_1.jpg)no-repeat center/cover;
+
+        }
+
+        #News .newsWrap :nth-of-type(3) .img {
+            background: url(https://d37v4gwq2080el.cloudfront.net/dev/upload/news/1721877836322_1638499112578_tuna_2.jpg)no-repeat center/cover;
+
+        }
+
+        #News .newsWrap :nth-of-type(4) .img {
+            background: url(https://d37v4gwq2080el.cloudfront.net/dev/upload/news/1721877644552_1667526798024_%ED%8A%9C%EB%82%98%EB%B0%A9%EC%86%A1.JPG)no-repeat center/cover;
+
+        }
+
+        #News .newsWrap :nth-of-type(5) .img {
+            background: url(https://d37v4gwq2080el.cloudfront.net/dev/upload/news/1721877311347_1667529424562_%EB%94%94%EC%A7%80%ED%84%B8%EB%8D%B0%EC%9D%BC%EB%A6%AC+%281%29.JPG)no-repeat center/cover;
+
+        }
+
+        #News .newsWrap :nth-of-type(6) .img {
+            background: url(https://d37v4gwq2080el.cloudfront.net/dev/upload/news/1721877229336_1667547449262_%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%93%9C3.JPG)no-repeat center/cover;
+
+        }
+
+        #News .line {
+            position: relative;
+            width: 67%;
+            height: 1px;
+            background-color: #645757;
+            opacity: 0.6;
+            margin: 0 auto;
+        }
+
+        #News .btn {
+            position: relative;
+            width: 10%;
+            bottom: -3%;
+            left: 78%;
+        }
+
+        #News .btn i {
+            margin-right: 0.5vw;
+            position: relative;
+            /* left: 0; */
+            font-size: 2.6vw;
+            color: #7A7A7A;
+            cursor: pointer;
+        }
+
+
+        /* footer style*/
+        #wrapper footer {
+            background-color: black;
+            width: 100%;
+            height: 250px;
+        }
+
+        #wrapper footer div {
+            width: 80%;
+            margin: 0 auto;
+            padding: 60px;
+        }
+
+        #wrapper footer h2 {
+            font-size: 45px;
+        }
+
+        #wrapper footer p {
+            padding: 10px;
+            font-size: 15px;
+        }
+
+        /* 반응형 웹 style */
+        /* 반응형 웹 style */
+        /* 반응형 웹 style */
+        /* 반응형 웹 style */
+        /* 반응형 웹 style */
+        /* 반응형 웹 style */
+
+        @media (max-width: 1200px) {
+            .mainMenu {
+                margin-top: 1.5vw;
+            }
+        }
+
+        @media (max-width: 999px) {
+            #wrapHeader {
+                position: fixed;
+                width: 100%;
+                height: 100px;
+                z-index: 1000;
+                transition: background-color 0.3s;
+            }
+
+            #wrapper header .gnb {
+                display: none;
+            }
+
+            .right_menu {
+                display: none;
+            }
+
+            header .logo {
+
+                width: 18%;
+                height: 95%;
+                margin-left: 5%;
+            }
+
+            #wrapper label {
+                display: block;
+
+            }
+
+            @keyframes slideIn {
+                0% {
+                    right: -100%;
+                    /* 메뉴가 화면 밖에 위치 */
+                }
+
+                100% {
+                    right: 0;
+                    /* 메뉴가 화면에 정상적으로 표시 */
+                }
+            }
+
+            @keyframes slideOut {
+                0% {
+                    right: 0;
+                    /* 메뉴가 화면에 정상적으로 표시 */
+                }
+
+                100% {
+                    right: -100%;
+                    /* 메뉴가 화면 밖으로 이동 */
+                }
+            }
+
+            #wrapper .lettle_menu {
+                position: absolute;
+                float: right;
+                width: 80%;
+                height: 100vh;
+                background-color: #020417;
+                right: 0px;
+                right: -100%;
+                /* 처음에는 메뉴가 화면 밖에 위치 */
+                top: 0px;
+            }
+
+
+
+            #wrapper input[type="checkbox"]:checked~.lettle_menu {
+                display: block;
+                /* 체크박스가 체크되면 메뉴를 표시 */
+                animation: slideIn 0.5s ease forwards;
+                /* 슬라이드 인 애니메이션 */
+            }
+
+            #wrapper input[type="checkbox"]:not(:checked)~.lettle_menu {
+                display: none;
+                /* 체크박스가 체크되지 않으면 메뉴를 표시 */
+                animation: slideOut 0.5s ease forwards;
+                /* 슬라이드 아웃 애니메이션 */
+            }
+
+            .lettle_menu .lettle_menu_wrapper {
+                position: relative;
+                top: 15%;
+                width: 80%;
+                height: 50vh;
+                overflow-y: scroll;
+                margin: 0 auto;
+
+            }
+
+            .lettle_menu .lettle_menu_wrapper::-webkit-scrollbar {
+                display: none;
+                /* 스크롤 바를 숨깁니다 */
+            }
+
+            #wrapper .lettle_menu ul li {
+                width: 100%;
+                line-height: 180px;
+                font-size: 3em;
+            }
+
+            #wrapper .lettle_menu ul li:first-child {
+                line-height: 60px;
+            }
+
+            #wrapper .lettle_menu ul li:last-child {
+                line-height: 60px;
+            }
+
+            #wrapper .lettle_menu label {
+                z-index: 99;
+
+            }
+
+            .lettle_menu .language {
+                position: absolute;
+                border: 1px solid rgba(255, 255, 255, 0.548);
+                width: 200px;
+                height: 90px;
+                left: 11%;
+                bottom: 23%;
+                font-size: 2.3em;
+                line-height: 115px;
+                border-radius: 22px;
+            }
+
+            .lettle_menu .language span {
+                font-size: 1.4em;
+            }
+
+            .lettle_menu .language {
+                padding-left: 15px;
+            }
+
+            .lettle_menu .language p {
+                position: absolute;
+                bottom: -18%;
+                left: 40%;
+
+            }
+
+            /* #about style */
+            /* #about style */
+            /* #about style */
+            /* #about style */
+            /* #about style */
+            #about {
+                width: 100%;
+                height: 120vw;
+                position: relative;
+
+            }
+
+            #about .about_introduce {
+                top: 100px;
+                position: relative;
+                text-align: center;
+            }
+
+            #about .about_introduce h1 {
+
+                font-size: 12vw;
+                margin-bottom: 4.1vw;
+            }
+
+            #about .about_introduce .line {
+                width: 80%;
+                height: 1px;
+                background-color: white;
+                opacity: 0.6;
+                margin: 0 auto;
+            }
+
+            #about .about_introduce p {
+                margin-top: 5.1vw;
+                font-size: 3.4vw;
+                line-height: 6.2vw;
+                padding: 0 10%;
+            }
+
+            /* #Resources style */
+            /* #Resources style */
+            /* #Resources style */
+            /* #Resources style */
+            /* #Resources style */
+
+            #Resources {
+                position: relative;
+                width: 100%;
+                height: 81vw;
+                background-color: #f5f5f5;
+                overflow: hidden;
+            }
+
+            #Resources .ResourcesWrap {
+                position: relative;
+                width: 90%;
+                height: 100%;
+                /* left: calc(50% - 35%); */
+                margin-left: 17%;
+                bottom: 0;
+                overflow: hidden;
+            }
+
+            #Resources .ResourcesWrap h2 {
+                margin-top: 7.5vw;
+                font-size: 3.3vw;
+                position: relative;
+                color: black;
+            }
+
+            #Resources .ResourcesWrap .downloadBox {
+                position: relative;
+                width: 400%;
+                height: 70%;
+                display: flex;
+                margin-top: 3%;
+
+            }
+
+            #Resources .ResourcesWrap .downloadBox div {
+                position: relative;
+                width: 25%;
+                height: 100%;
+
+            }
+
+            #Resources .ResourcesWrap .downloadBox div .img {
+                width: 74%;
+                height: 65%;
+                border-radius: 10px;
+                box-shadow: 2px 2px 10px 0px rgb(170, 170, 170);
+            }
+
+            #Resources .ResourcesWrap .downloadBox div h3,
+            #Resources .ResourcesWrap .downloadBox div p {
+                color: black;
+                position: relative;
+                left: 1%;
+            }
+
+            #Resources .ResourcesWrap .downloadBox div h3 {
+                font-size: 4.7vw;
+                margin-top: 3.5%;
+            }
+
+            #Resources .ResourcesWrap .downloadBox div p {
+                font-size: 2.95vw;
+                margin-top: 2%;
+                font-weight: 700;
+                color: #626262;
+
+            }
+
+            #Resources .ResourcesWrap .downloadBox div .icon {
+                width: 5.5vw;
+                height: 5.5vw;
+                background: url(https://solution-dev.link/admin/static/kor/assets/images/icon/c-download-bk.svg)no-repeat center/cover;
+                position: absolute;
+                right: 25.5%;
+                bottom: 10.5%;
+                cursor: pointer;
+            }
+
+            #Resources .ResourcesWrap .line {
+                width: 74%;
+                height: 1px;
+                position: relative;
+                background-color: #7A7A7A;
+                margin-top: -3%;
+            }
+
+            #Resources .btn {
+                position: relative;
+                width: 100%;
+                bottom: -3%;
+                left: 54%;
+            }
+
+            #Resources .btn i {
+                margin-right: 2vw;
+                position: relative;
+                /* left: 0; */
+                font-size: 7.6vw;
+                color: #7A7A7A;
+                cursor: pointer;
+                opacity: 1;
+            }
+
+            /* Event style */
+            /* Event style */
+            /* Event style */
+            /* Event style */
+            /* Event style */
+            #Event {
+                position: relative;
+                width: 100%;
+                height: 110vw;
+                background: url(https://solution-dev.link/admin/static/kor/assets/images/main/c-event-bg.png)no-repeat center/cover;
+            }
+
+            #Event .Eventwarp {
+                width: 70%;
+                height: 100%;
+                margin: 0 auto;
+                position: relative;
+                display: inline;
+                /* justify-content: none;
+                justify-items: none; */
+
+            }
+
+            #Event h2 {
+                font-size: 4.5vw;
+                position: relative;
+                top: 0;
+                color: #7A7A7A
+            }
+
+            #Event h3 {
+                font-size: 4vw;
+                position: relative;
+                padding: 0;
+            }
+
+            #Event p {
+                margin-top: 8%;
+                font-size: 2.05vw;
+                position: relative;
+                float: left;
+                line-height: 4vw;
+            }
+
+            #Event .EventImg {
+                width: 60%;
+                height: 45%;
+                background: url(https://d37v4gwq2080el.cloudfront.net/prd/upload/events/1717476522164_c-event-tunA.png)no-repeat center/cover;
+                position: relative;
+                top: 3%;
+                border-radius: 5%;
+                margin: 0 auto;
+            }
+
+            #Event .EventBox {
+                width: 60%;
+                height: 50%;
+                position: relative;
+                top: 5%;
+                margin: 0 auto;
+            }
+
+            #Event .line {
+                position: relative;
+                width: 60%;
+                height: 1px;
+                background-color: #f5f5f5;
+                opacity: 0.6;
+                margin: 0 auto;
+                z-index: 99;
+                bottom: 2%;
+            }
+
+
+
+            /* #References style */
+            /* #References style */
+            /* #References style */
+            /* #References style */
+            /* #References style */
+            #References {
+                position: relative;
+                width: 100%;
+                height: 70vw;
+                max-height: 100vh;
+                background-color: aliceblue;
+                overflow-x: hidden;
+            }
+
+            #References .ReferencesImg {
+                margin-top: 1%;
+                position: relative;
+                width: 400%;
+                height: 65%;
+                /* border: 1px solid red; */
+                display: flex;
+                justify-content: space-around;
+            }
+
+            #References .ReferencesImg .company {
+                float: left;
+                width: 30%;
+                height: 90%;
+                border-radius: 15px;
+                margin-top: 0.5%;
+                margin-right: 1%;
+                margin-left: 1%;
+                box-shadow: 2px 2px 10px 0px rgb(170, 170, 170);
+                background-color: white;
+            }
+
+            #References .ReferencesImg .company h3 {
+                position: relative;
+                font-size: 2.1vw;
+                color: black;
+                text-align: center;
+                margin-top: 8%;
+                padding: 0 10%;
+            }
+
+            #References .ReferencesImg .company p {
+                position: relative;
+                color: black;
+                text-align: center;
+                font-size: 1.8vw;
+                padding: 5% 15%;
+            }
+
+            #References .line {
+                position: relative;
+                width: 92%;
+                height: 1px;
+                background-color: #626262;
+                opacity: 0.6;
+                margin: 0 auto;
+            }
+
+            #References i {
+                margin-right: 2vw;
+                margin-top: 3%;
+                position: relative;
+                font-size: 7.6vw;
+                left: 65.5%;
+                cursor: pointer;
+                color: #7A7A7A;
+                cursor: pointer;
+                z-index: 99;
+            }
+
+            /* #news style */
+            /* #news style */
+            /* #news style */
+            /* #news style */
+            /* #news style */
+            #News {
+                position: relative;
+                width: 100%;
+                height: 80vw;
+                max-height: 100vh;
+                border: 1px solid white;
+                overflow: hidden;
+            }
+
+            #News h2 {
+                margin-top: 7%;
+                font-size: 2.8vw;
+                position: relative;
+                color: black;
+                left: 17%;
+            }
+
+            #News .newsWrap {
+                margin-top: 3%;
+                position: relative;
+                width: 300%;
+                height: 55%;
+                margin-left: 3%;
+                bottom: 0;
+                overflow: hidden;
+                display: flex;
+
+
+            }
+
+            #News .newsWrap .content {
+                position: relative;
+                width: 15%;
+                height: 100%;
+                margin-right: 1.25%;
+                /* border: 1px solid black; */
+            }
+
+            #News .newsWrap .date {
+                position: relative;
+                width: 10.5vw;
+                height: 3vw;
+                border-radius: 6px;
+                font-size: 2vw;
+                font-weight: 600;
+                color: #5c5c5c;
+                background-color: #eaeaea;
+                padding-top: 0.3vw;
+                text-align: center;
+            }
+
+            #News .newsWrap h3 {
+                margin-top: 2%;
+                color: black;
+                font-size: 2.5vw;
+            }
+
+            #News .newsWrap .img {
+                margin-top: 3%;
+                width: 100%;
+                height: 65%;
+                border-radius: 15px;
+                min-height: none;
+                box-shadow: 2px 2px 10px 0px rgb(170, 170, 170);
+            }
+
+            #News .line {
+                position: relative;
+                width: 92%;
+                height: 1px;
+                background-color: #645757;
+                opacity: 0.6;
+                margin: 0 auto;
+            }
+
+            #News .btn {
+                position: relative;
+                width: 30%;
+                bottom: -4%;
+                left: 65.5%;
+            }
+
+            #News .btn i {
+                margin-right: 2vw;
+                position: relative;
+                /* left: 0; */
+                font-size: 7.6vw;
+                color: #7A7A7A;
+                cursor: pointer;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrapper">
+        <!-- header nav bar -->
+        <div id="wrapHeader">
+            <header>
+                <a class="logo" href="">LG CNS Solution</a>
+
+                <nav class="gnb">
+                    <ul class="mainMenu">
+                        <li><a href="#">Solutions ∨</a></li>
+                    </ul>
+                    <ul class="scrollNav">
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#Resources">Resources</a></li>
+                        <li><a href="#Event">Event</a></li>
+                        <li><a href="#Release_Notes">Release Notes</a></li>
+                        <li><a href="#References">References</a></li>
+                        <li><a href="#News">News</a></li>
+                    </ul>
+                </nav>
+                <div class="right_menu">
+                    <p>Policy.</p>
+                    <div class="language">
+
+                        <span class="material-symbols-outlined">
+                            language
+                        </span><a>KOR</a>
+                    </div>
+                </div>
+            </header>
+            <input type="checkbox" id="toggle">
+            <label for="toggle">
+                <span class="material-symbols-outlined">
+                    menu
+                </span>
+            </label>
+
+            <nav class="lettle_menu">
+                <a href="">
+                    <label for="toggle">
+                        <span class="material-symbols-outlined">
+                            close
+                        </span>
+                    </label></a>
+                <div class="lettle_menu_wrapper">
+                    <ul>
+                        <li>Cloud Middleware <br> Platform</li>
+                        <li>Testing Solution</li>
+                        <li>DevOn</li>
+                        <li>Web3</li>
+                    </ul>
+
+                </div>
+                <a class="language" href=""><span class="material-symbols-outlined">
+                        language
+                    </span>
+                    <p>KOR</p>
+                </a>
+            </nav>
+        </div>
+        <section id="about">
+            <div class="about_introduce">
+                <h1>TunA</h1>
+                <div class="line"></div>
+                <p>TunA는 급변하는 IT 인프라 환경에서도<br>
+
+                    안정적인 시스템 운영을 가능하게 하는<br>
+
+                    첨단 APM(응용 프로그램 성능 관리) 솔루션입니다.<br>
+
+                    IT 시스템의 범위와 복잡성이 확대되면서<br>
+
+                    효율적인 시스템 성능 관리가<br>
+
+                    IT 투자의 핵심 요소로 자리 잡고 있습니다.<br>
+
+                    TunA는 최종 사용자, 운영 체제, 응용 프로그램, 데이터베이스 등<br>
+
+                    다양한 IT 구성 요소를 통합하여 모니터링하는 기능을 제공합니다.</p>
+            </div>
+
+        </section>
+        <section id="Resources">
+            <div class="ResourcesWrap ">
+                <h2>Resources</h2>
+                <div class="downloadBox">
+                    <div class="download1">
+                        <div class="img"></div>
+                        <h3>Brochure</h3>
+                        <p>TunA 브로슈어</p>
+                        <i class="icon"></i>
+                    </div>
+                    <div class="download2 ">
+                        <div class="img"></div>
+                        <h3>Customer case</h3>
+                        <p>TunA 고객사례집</p>
+                        <div class="icon"></div>
+                    </div>
+                </div>
+
+                <div class="line"></div>
+                <div class="btn">
+                    <i class="fa-solid fa-circle-chevron-left"></i>
+                    <i class="fa-solid fa-circle-chevron-right"></i>
+                </div>
+            </div>
+
+        </section>
+        <section id="Event">
+            <div class="Eventwarp">
+
+                <div class="EventImg">
+
+                </div>
+                <div class="EventBox">
+                    <h2>Event</h2>
+                    <h3>최고의 애플리케이션 성능 관리,<br>'TunA'만 믿으세요!</h3>
+                    <p>
+                        LG CNS의 애플리케이션성능관리(Application PerformanceManagement, APM) 솔루션인 ‘TunA’는 이름 속에 핵심 가치가 잘드러나 있습니다.
+                        TunA는 ‘Tuning Assistant’의 줄임말로,직역하면 세부 조율자를 뜻합니다. TunA는 IT서비스 품질 향상과가시성 확보, 장애 예측 및 대응, 전략 수립과
+                        총소유비용(TotalCost of Ownership, TCO)절감을 위한 APM 솔루션입니다.
+                    </p>
+                </div>
+
+                <div class="line"></div>
+            </div>
+        </section>
+        <section id="Release_Notes">
+            <div class="Release_NotesWrap ">
+                <h2>Release Notes</h2>
+                <div class="line"></div>
+                <h2>TunA 2.8.2 릴리스 노트</h2>
+                <div class="line"></div>
+                <h2>TunA 2.8.0 릴리스 노트</h2>
+                <div class="line"></div>
+                <h2>TunA 2.7.0 릴리스 노트</h2>
+                <div class="line"></div>
+                <h2>TunA 2.5.6 릴리스 노트</h2>
+                <div class="line"></div>
+                <h2>TunA 2.5.4 릴리스 노트</h2>
+                <div class="line"></div>
+            </div>
+
+
+
+
+        </section>
+        <section id="References">
+            <h2>References</h2>
+            <div class="ReferencesImg">
+                <div class="company">
+                    <div class="img"></div>
+                    <h3> LG전자 전사 표준 APM 적용 </h3>
+                    <p>전사 IT 시스템 모니터링 </p>
+                </div>
+                <div class="company">
+                    <div class="img"></div>
+                    <h3> GS 건설 IT 시스템 모니터링 </h3>
+                    <p>인프라 및 어플리케이션 모니터링 </p>
+                </div>
+                <div class="company">
+                    <div class="img"></div>
+                    <h3>GS리테일 운영시스템 고도화 </h3>
+                    <p>컨테이너 기반 어플리케이션 모니터링</p>
+                </div>
+                <div class="company">
+                    <div class="img"></div>
+                    <h3> KB 마이데이터플랫폼 구축. </h3>
+                    <p>Cloud 환경의 MSA 기반 시스템모니터링, EndUser 모니터링 </p>
+                </div>
+                <div class="company">
+                    <div class="img"></div>
+                    <h3> 르노삼성자동차 모니터링 시스템 구축 </h3>
+                    <p>어플리케이션 모니터링 </p>
+                </div>
+                <div class="company">
+                    <div class="img"></div>
+                    <h3> 조폐공사 블록체인 서비스 플랫폼 적용 </h3>
+                    <p>국내 최초 공공 블록체인 플랫폼으로 지역화폐, 모바일 인증 등 서비스 제공 </p>
+                </div>
+                <div class="company">
+                    <div class="img"></div>
+                    <h3> 범한 판토스 업무 시스템 모니터링 구축 </h3>
+                    <p>인프라 및 어플리케이션 모니터링 </p>
+                </div>
+                <div class="company">
+                    <div class="img"></div>
+                    <h3> 국세청 빅데이터 시스템 구축 </h3>
+                    <p>어플리케이션 모니터링 </p>
+                </div>
+            </div>
+            <div class="line"></div>
+            <div class="btn">
+                <i class="fa-solid fa-circle-chevron-left"></i>
+                <i class="fa-solid fa-circle-chevron-right"></i>
+            </div>
+
+
+
+        </section>
+        <section id="News">
+            <h2>News</h2>
+            <div class="newsWrap">
+                <div class="content">
+                    <div class="date">2021.07.18</div>
+                    <h3>'레거시와 클라우드의 연결' 꾀하는 모던 APM의 중요성</h3>
+                    <div class="img"></div>
+                </div>
+                <div class="content">
+                    <div class="date">2021.05.20</div>
+                    <h3>다양한 세대의 기술 환경을 수용하는 현대적 APM, LG CNS TunA 알아보기</h3>
+                    <div class="img"></div>
+                </div>
+                <div class="content">
+                    <div class="date">2021.04.12</div>
+                    <h3>시대가 바뀌어도 변하지 않는 것, APM을 통한 IT서비스 가시성 확보 중요성</h3>
+                    <div class="img"></div>
+                </div>
+                <div class="content">
+                    <div class="date">2020.10.23</div>
+                    <h3>혁신적인 IT운영 가시성 확보...LG CNS 시장 공략 강화</h3>
+                    <div class="img"></div>
+                </div>
+                <div class="content">
+                    <div class="date">2020.10.20</div>
+                    <h3>LG CNS,기업용 SW 시장 공략 확대'시스템 SW' 기반 개발 효율성 확보 초점</h3>
+                    <div class="img"></div>
+                </div>
+                <div class="content">
+                    <div class="date">2020.07.30</div>
+                    <h3>LG CNS APM TunA가 나라장터 종합쇼핑몰에 등록</h3>
+                    <div class="img"></div>
+                </div>
+            </div>
+            <div class="line"></div>
+            <div class="btn">
+                <i class="fa-solid fa-circle-chevron-left"></i>
+                <i class="fa-solid fa-circle-chevron-right"></i>
+            </div>
+
+        </section>
+        <footer>
+            <div>
+                <h2> Contact Us</h2>
+                <p>solutionunit@lgcns.com</p>
+                <hr>
+                <p>&copy;Gate, LG CNS, All rights reserved</p>
+            </div>
+        </footer>
+
+    </div>
+
+</body>
+<script>
+    $(function () {
+        const ResourcesNextBtn = $("#Resources .btn .fa-circle-chevron-right")
+        const ResourcesPreBtn = $("#Resources .btn .fa-circle-chevron-left")
+        const downloadBox = $(".downloadBox")
+        const downloadBoxDiv = $(".downloadBox div")
+        const ReferencesNextBtn = $("#References .btn .fa-circle-chevron-right")
+        const ReferencesPreBtn = $("#References .btn .fa-circle-chevron-left")
+        const ReferencesImg = $(".ReferencesImg")
+        const ReferencesImgBox = $("#References .ReferencesImg .company")
+        const NewsNextBtn = $("#News i.fa-circle-chevron-right")
+        const NewsPreBtn = $("#News i.fa-circle-chevron-left")
+        const NewsContent = $("#News .newsWrap .content")
+        const wrapHeader = $("#wrapHeader")
+        const SolutionText = $('.mainMenu a')
+        const logo = $('header .logo')
+        const scrollNav = $('.scrollNav')
+        const litteMenuIcon = $('#wrapper label span')
+        const scrollNavMenu = $('.scrollNav li a')
+        const section = $('section')
+
+        let downloadBoxPage = 0
+        let ReferencesImgPage = 0
+        let NewsCurrentLeft = 0
+        let ReferencesCurrentLeft = 0
+        let downloadCurrentLeft = 0
+        let downloadBoxWidth = downloadBoxDiv.width();
+        let ReferencesImgWidth = ReferencesImgBox.outerWidth(true)
+        let ReferencesImgMaxWidth = -ReferencesImg.width() / 2
+        let downloadBoxMaxWidth = -downloadBox.width() / 2
+        let NewsMaxWidth = NewsContent.width() / 2
+        let NewsImgWidth = NewsContent.outerWidth(true)
+
+        $(window).resize(function () {
+            downloadBoxMaxWidth = -downloadBox.width() / 2
+        })
+        $(window).resize(function () {
+            downloadBoxWidth = downloadBoxDiv.width()
+            location.reload();
+        })
+
+        $(window).resize(function () {
+            ReferencesImgWidth = ReferencesImgBox.outerWidth(true)
+        })
+        $(window).resize(function () {
+            ReferencesImgMaxWidth = -ReferencesImg.width() / 2
+        })
+
+
+
+        // Resources section control
+        ResourcesNextBtn.click(function () {
+            if (downloadBoxPage == 0) {
+                downloadBox.stop().animate({ "left": "-100%" }, 500)
+                downloadBoxPage++
+            }
+
+        })
+        ResourcesPreBtn.click(function () {
+            if (downloadBoxPage == 1) {
+                downloadBox.stop().animate({ "left": "0%" }, 500)
+                downloadBoxPage--
+            }
+
+        })
+
+        // References section control
+        ReferencesNextBtn.click(function () {
+            // ReferencesImg의 전체 너비와 현재 위치를 고려하여 마지막 항목에 도달했는지 확인
+            if (ReferencesCurrentLeft > ReferencesImgMaxWidth - ReferencesImgWidth * 2) {
+                ReferencesCurrentLeft -= ReferencesImgWidth;
+                ReferencesImg.stop().animate({ "left": ReferencesCurrentLeft }, 500);
+            }
+        });
+
+        ReferencesPreBtn.click(function () {
+            // 처음 위치로 돌아갈 수 있는지 확인
+            if (ReferencesCurrentLeft < 0) {
+                ReferencesCurrentLeft += ReferencesImgWidth;
+                ReferencesImg.stop().animate({ "left": ReferencesCurrentLeft }, 500);
+            }
+        });
+
+
+
+        // News section control
+        NewsNextBtn.click(function () {
+            if (NewsCurrentLeft > NewsMaxWidth - NewsImgWidth * 3.5) {
+                NewsCurrentLeft -= NewsImgWidth;
+                NewsContent.stop().animate({ "left": NewsCurrentLeft }, 500);
+            }
+        });
+
+        NewsPreBtn.click(function () {
+            if (NewsCurrentLeft < -1) {
+                NewsCurrentLeft += NewsImgWidth;
+                NewsContent.stop().animate({ "left": NewsCurrentLeft }, 500);
+            }
+        });
+
+        // Header height on resize
+        let wrapHeaderHeight = wrapHeader.height()
+
+        $(window).resize(function () {
+            wrapHeaderHeight = wrapHeader.height()
+        })
+
+        // Scroll event
+        $(window).on('scroll', function () {
+            // Change header style when scrolling
+            if ($(this).scrollTop() > 0) {
+                wrapHeader.css('background-color', 'white');
+                SolutionText.css('color', 'black');
+                logo.css('background', 'url(https://solution-dev.link/admin/static/kor/assets/images/icon/h-logo-bk.png) no-repeat center/contain');
+                scrollNav.css('background-color', '#F2F1F8');
+                litteMenuIcon.eq(0).css('color', 'black');
+            } else {
+                wrapHeader.css('background-color', '');
+                SolutionText.css('color', '');
+                logo.css('background', '');
+                scrollNav.css('background-color', '');
+                litteMenuIcon.css('color', '');
+            }
+
+            // Scroll position for navigation
+            let section1 = section.eq(0).offset().top - wrapHeaderHeight
+            let section2 = section.eq(1).offset().top - wrapHeaderHeight
+            let section3 = section.eq(2).offset().top - wrapHeaderHeight
+            let section4 = section.eq(3).offset().top - wrapHeaderHeight
+            let section5 = section.eq(4).offset().top - wrapHeaderHeight
+            let section6 = section.eq(5).offset().top - wrapHeaderHeight
+
+
+           // Fix: Scroll event should use $(this).scrollTop() instead of res.scrollTop()
+            if ($(this).scrollTop() >= section6) {
+                scrollNavMenu.css('color', '');
+                scrollNavMenu.eq(5).css('color', '#4739ac');
+            } else if ($(this).scrollTop() >= section5) {
+                scrollNavMenu.css('color', '');
+                scrollNavMenu.eq(4).css('color', '#4739ac');
+            } else if ($(this).scrollTop() >= section4) {
+                scrollNavMenu.css('color', '');
+                scrollNavMenu.eq(3).css('color', '#4739ac');
+            } else if ($(this).scrollTop() >= section3) {
+                scrollNavMenu.css('color', '');
+                scrollNavMenu.eq(2).css('color', '#4739ac');
+            } else if ($(this).scrollTop() >= section2) {
+                scrollNavMenu.css('color', '');
+                scrollNavMenu.eq(1).css('color', '#4739ac');
+            } else if ($(this).scrollTop() == 0) {
+                scrollNavMenu.css('color', '');
+            } else if ($(this).scrollTop() >= section1) {
+                scrollNavMenu.css('color', '');
+                scrollNavMenu.eq(0).css('color', '#4739ac');
+            } else {
+                scrollNavMenu.css('color', '');
+            }
+        });
+
+    })
+
+</script>
+
+</html>

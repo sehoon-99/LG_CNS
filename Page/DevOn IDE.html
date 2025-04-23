@@ -1,0 +1,1754 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevOn IDE</title>
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="https://solution.lgcns.com/admin/static/front/images/favicon.png">
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&" />
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/e3b2fbc156.js" crossorigin="anonymous"></script>
+    <script src="js/prefixfree.min.js"></script>
+
+    <style>
+        @font-face {
+            font-family: 'LG';
+            src: url(./LG\ Smart\ Regular.woff);
+
+        }
+
+        @font-face {
+            font-family: 'LG_Blod';
+            src: url(./LG\ Smart\ Bold.woff);
+        }
+
+
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            box-sizing: border-box;
+            text-decoration: none;
+            font-family: 'LG', sans-serif;
+            color: white;
+        }
+
+        .bo {
+            border: 1px solid red;
+        }
+
+        /* header nav bar style */
+        #wrapHeader {
+            position: fixed;
+            width: 100%;
+            height: 7.5vw;
+            max-height: 100px;
+            z-index: 1000;
+            transition: background-color 0.3s;
+        }
+
+        #wrapper header {
+            overflow: hidden;
+            width: 98%;
+            height: 90px;
+            text-align: center;
+            position: relative;
+            top: 0;
+            left: 0;
+            margin: 0 auto;
+
+        }
+
+        header .logo {
+            position: relative;
+            float: left;
+            line-height: 90px;
+            width: 10%;
+            background: url(https://solution-dev.link/admin/static/kor/assets/images/icon/h-logo.png)no-repeat center/contain;
+            height: 70%;
+            margin-top: 1.15vw;
+            text-indent: -9999px;
+
+
+
+        }
+
+        #wrapper header .gnb {
+            float: left;
+            width: 50%;
+            position: relative;
+
+        }
+
+        .mainMenu {
+            position: relative;
+            float: left;
+            height: 90px;
+            margin-top: 1.2vw;
+            line-height: 60px;
+            width: 15%;
+            display: block;
+            margin-left: 2.8%;
+
+        }
+
+        .mainMenu a {
+            position: relative;
+            display: block;
+            width: 100%;
+            height: 100%;
+            font-size: 1.35vw;
+            font-weight: 600;
+            /* color: black; */
+
+
+
+        }
+
+
+
+        .scrollNav {
+            position: relative;
+            margin-top: 28px;
+            float: left;
+            width: 65%;
+            min-width: 300px;
+            height: 2.5vw;
+            border: 1px solid 262738;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 25px;
+            overflow: hidden;
+            margin-left: 20px;
+            min-height: 35px;
+        }
+
+        .scrollNav li {
+            position: relative;
+            width: 16.66%;
+            float: left;
+            padding: 0px;
+
+
+        }
+
+        .scrollNav li a {
+            position: relative;
+            height: 100%;
+            float: left;
+            color: #b6b6b6;
+            display: block;
+            font-size: 0.95vw;
+            padding: 12px 0px;
+            width: 100%;
+            font-weight: 500;
+            z-index: 99;
+            font-family: 'LG_Blod', sans-serif;
+        }
+
+        .scrollNav li::before {
+            content: "";
+            width: 0.8vw;
+            height: 1px;
+            background-color: #b6b6b650;
+            position: absolute;
+            margin-left: -5%;
+            top: 50%;
+            display: block;
+        }
+
+        .scrollNav li:nth-of-type(1)::before {
+            content: none;
+        }
+
+        .scrollNav li:nth-of-type(1) {
+            position: relative;
+            width: 17.5%;
+        }
+
+        .scrollNav li:nth-of-type(2) {
+            position: relative;
+            width: 23%;
+        }
+
+        .scrollNav li:nth-of-type(3) {
+            position: relative;
+            width: 18%;
+        }
+
+        .scrollNav li:nth-of-type(4) {
+            position: relative;
+            width: 24%;
+        }
+
+        .scrollNav li:nth-of-type(5) {
+            position: relative;
+            width: 17.5%;
+        }
+
+
+        .right_menu {
+            background-color: #4739ac;
+            margin: 9px 0px;
+            width: 11.5%;
+            height: 5vw;
+            max-height: 70px;
+            float: right;
+            border-radius: 15PX;
+            /* text-decoration: underline; */
+            position: absolute;
+            right: 1.8%;
+            top: 8%;
+            overflow: hidden;
+
+        }
+
+
+        .right_menu .language {
+            position: relative;
+            border: 1px solid rgb(146, 146, 146);
+            width: 35%;
+            top: 22%;
+            left: 58%;
+            height: 60%;
+            border-radius: 10PX;
+            cursor: pointer;
+        }
+
+        .right_menu p {
+            position: absolute;
+            left: 10%;
+            top: 35%;
+            font-size: 1vw;
+        }
+
+        .right_menu .language span {
+            font-size: 1vw;
+            position: relative;
+            right: 5%;
+            top: 23%;
+        }
+
+        .right_menu .language a {
+            font-size: 1vw;
+            position: relative;
+            top: 16%;
+
+        }
+
+        #wrapper label {
+            position: absolute;
+            right: 30px;
+            top: 25px;
+            cursor: pointer;
+            display: none;
+
+        }
+
+        #wrapper input {
+            display: none;
+
+
+        }
+
+        #wrapper label span {
+            font-size: 3.0em;
+        }
+
+        .lettle_menu {
+            display: none;
+        }
+
+
+
+
+
+
+        /* #about style */
+        /* #about style */
+        /* #about style */
+        /* #about style */
+        /* #about style */
+        #about {
+            width: 100%;
+            height: 41vw;
+            background: url(https://d37v4gwq2080el.cloudfront.net/dev/upload/sol/1721665458844_c-visual-devon.png)no-repeat center/cover;
+            position: relative;
+
+        }
+
+        #about .about_introduce {
+            top: 10vw;
+            position: relative;
+            text-align: center;
+        }
+
+        #about .about_introduce h1 {
+
+            font-size: 6.3vw;
+            margin-bottom: 1.1vw;
+        }
+
+        #about .about_introduce .line {
+            width: 20vw;
+            height: 1px;
+            background-color: white;
+            opacity: 0.6;
+            margin: 0 auto;
+        }
+
+        #about .about_introduce p {
+            margin-top: 1.2vw;
+            font-size: 1.25vw;
+            line-height: 2.2vw;
+        }
+
+        /* #Resources style */
+        /* #Resources style */
+        /* #Resources style */
+        /* #Resources style */
+        /* #Resources style */
+        #Resources {
+            position: relative;
+            width: 100%;
+            height: 41vw;
+            background-color: #f5f5f5;
+            overflow: hidden;
+        }
+
+        #Resources .ResourcesWrap {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            /* left: calc(50% - 35%); */
+            margin-left: 17%;
+            bottom: 0;
+            overflow: hidden;
+        }
+
+        #Resources .ResourcesWrap h2 {
+            margin-top: 7.5vw;
+            font-size: 2.3vw;
+            position: relative;
+            color: black;
+        }
+
+        #Resources .ResourcesWrap .downloadBox {
+            position: relative;
+            width: 90%;
+            height: 40%;
+            display: flex;
+            margin-top: 3%;
+
+        }
+
+        #Resources .ResourcesWrap .downloadBox div {
+            position: relative;
+            width: 25%;
+            height: 100%;
+
+        }
+
+        #Resources .ResourcesWrap .downloadBox div .img {
+            width: 88%;
+            height: 65%;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px 0px rgb(170, 170, 170);
+
+        }
+
+        #Resources .ResourcesWrap .downloadBox div:nth-of-type(1) .img {
+            background: url(https://d37v4gwq2080el.cloudfront.net/dev/upload/download/1721728083671_1.png)no-repeat center/cover;
+        }
+
+
+
+        #Resources .ResourcesWrap .downloadBox div h3,
+        #Resources .ResourcesWrap .downloadBox div p {
+            color: black;
+            position: relative;
+            left: 1%;
+        }
+
+        #Resources .ResourcesWrap .downloadBox div h3 {
+            font-size: 1.7vw;
+            margin-top: 3.5%;
+        }
+
+        #Resources .ResourcesWrap .downloadBox div p {
+            font-size: 0.95vw;
+            margin-top: 2%;
+            font-weight: 700;
+            color: #626262;
+
+        }
+
+        #Resources .ResourcesWrap .downloadBox div .icon {
+            width: 1.5vw;
+            height: 1.5vw;
+            background: url(https://solution-dev.link/admin/static/kor/assets/images/icon/c-download-bk.svg)no-repeat center/cover;
+            position: absolute;
+            right: 12%;
+            bottom: 8.5%;
+            cursor: pointer;
+        }
+
+        #Resources .ResourcesWrap .line {
+            width: 59%;
+            height: 1px;
+            position: relative;
+            background-color: #7A7A7A;
+            margin-top: 3%;
+        }
+
+        /* #Resources .btn {
+            position: relative;
+            width: 10%;
+            bottom: -3%;
+            left: 53.7%;
+
+        }
+
+        #Resources .btn i {
+            margin-right: 0.5vw;
+            position: relative;
+            
+            font-size: 2.6vw;
+            color: #7A7A7A;
+            cursor: pointer;
+        } */
+
+        /* Video style */
+        /* Video style */
+        /* Video style */
+        /* Video style */
+        /* Video style */
+
+        #Video {
+            position: relative;
+            width: 100%;
+            height: 41vw;
+            background: url(../back2.jpg)no-repeat center/cover;
+        }
+
+        #Video .Videowarp {
+            width: 67%;
+            height: 100%;
+            margin: 0 auto;
+        }
+
+        #Video h2 {
+            top: 7.5vw;
+            font-size: 2.8vw;
+            position: absolute;
+        }
+
+        #Video .VideoBox {
+            width: 48%;
+            height: 45%;
+            position: relative;
+            top: 35%;
+            background: url(https://d37v4gwq2080el.cloudfront.net/dev/upload/video/1721901876772_c-video-img.png)no-repeat center/cover;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        #Video .VideoBox h2 {
+            position: relative;
+            left: 6%;
+            font-size: 4.2vw;
+            top: 51%;
+            margin-bottom: 1%;
+        }
+
+        #Video .VideoBox p {
+            position: relative;
+            left: 5%;
+            font-size: 0.9vw;
+            font-weight: 700;
+            top: 51%;
+            border-radius: 30px;
+            background-color: rgba(0, 0, 0, 0.5);
+            width: 55%;
+            padding: 1.25% 1.5%;
+            text-align: center;
+
+        }
+
+        #Video .VideoBox i {
+            position: absolute;
+            font-size: 5vw;
+            right: 7%;
+            bottom: 11%;
+            cursor: pointer;
+            transition: color 0.28s;
+        }
+
+        #Video .VideoBox i:hover {
+            color: #7A7A7A;
+
+        }
+
+        #Video .VideoBox2 {
+            width: 48%;
+            height: 45%;
+            position: relative;
+            top: -10%;
+            left: 50%;
+            background: url(https://d37v4gwq2080el.cloudfront.net/dev/upload/video/1721901876772_c-video-img.png)no-repeat center/cover;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        #Video .VideoBox2 h2 {
+            position: relative;
+            left: 6%;
+            font-size: 4.2vw;
+            top: 51%;
+            margin-bottom: 1%;
+        }
+
+        #Video .VideoBox2 p {
+            position: relative;
+            left: 5%;
+            font-size: 0.9vw;
+            font-weight: 700;
+            top: 51%;
+            border-radius: 30px;
+            background-color: rgba(0, 0, 0, 0.5);
+            width: 55%;
+            padding: 1.25% 1.5%;
+            text-align: center;
+
+        }
+
+        #Video .VideoBox2 i {
+            position: absolute;
+            font-size: 5vw;
+            right: 7%;
+            bottom: 11%;
+            cursor: pointer;
+            transition: color 0.28s;
+        }
+
+        #Video .VideoBox2 i:hover {
+            color: #7A7A7A;
+
+        }
+
+
+
+
+
+        /* #References style */
+        /* #References style */
+        /* #References style */
+        /* #References style */
+        /* #References style */
+        /* #References style */
+
+        #References {
+            position: relative;
+            width: 100%;
+            height: 60vw;
+            max-height: 100vh;
+            background-color: aliceblue;
+            overflow-x: hidden;
+        }
+
+        #References h2 {
+            margin-top: 7.5vw;
+            font-size: 2.8vw;
+            position: relative;
+            color: black;
+            left: 17%;
+
+        }
+
+        #References .ReferencesImg {
+            margin-top: 3%;
+            position: relative;
+            width: 100%;
+            height: 50%;
+            /* border: 1px solid red; */
+            display: flex;
+            justify-content: space-around;
+        }
+
+        #References .ReferencesImg .company {
+            float: left;
+            width: 40%;
+            height: 80%;
+            border-radius: 15px;
+            margin-top: 1%;
+            margin-right: 1%;
+            margin-left: 1%;
+            box-shadow: 2px 2px 10px 0px rgb(170, 170, 170);
+            background-color: white;
+
+
+        }
+
+        #References .ReferencesImg .company .img {
+            position: relative;
+            width: 80%;
+            height: 30%;
+            margin: 0 auto;
+            top: 10%;
+
+        }
+
+        #References .ReferencesImg .company:nth-of-type(1) .img {
+            background: url(https://d37v4gwq2080el.cloudfront.net/dev/upload/ref/1721904733234_c-hankook.png)no-repeat center/contain;
+        }
+
+        #References .ReferencesImg .company:nth-of-type(2) .img {
+            background: url(https://d37v4gwq2080el.cloudfront.net/dev/upload/ref/1721904626939_c-tossbank.png)no-repeat center/contain;
+        }
+
+        #References .ReferencesImg .company:nth-of-type(3) .img {
+            background: url(https://d37v4gwq2080el.cloudfront.net/dev/upload/ref/1721904701835_c-jeju+%281%29.png)no-repeat center/contain;
+        }
+
+        #References .ReferencesImg .company:nth-of-type(4) .img {
+            background: url(https://d37v4gwq2080el.cloudfront.net/dev/upload/ref/1721904733234_c-hankook.png)no-repeat center/contain;
+        }
+
+        #References .ReferencesImg .company h3 {
+            position: relative;
+            font-size: 1.1vw;
+            color: black;
+            text-align: center;
+            margin-top: 10%;
+        }
+
+        #References .ReferencesImg .company p {
+            position: relative;
+            color: black;
+            text-align: center;
+            font-size: 0.8vw;
+            padding: 3% 12%;
+        }
+
+        #References .line {
+            position: relative;
+            width: 67%;
+            height: 1px;
+            background-color: #626262;
+            opacity: 0.6;
+            margin: 0 auto;
+        }
+
+        #References i {
+            margin-right: 0.5vw;
+            margin-top: 1.7%;
+            position: relative;
+            font-size: 2.6vw;
+            left: 77.5%;
+            cursor: pointer;
+            color: #7A7A7A;
+            cursor: pointer;
+            z-index: 99;
+            display: none;
+        }
+
+        /* #News style */
+        /* #News style */
+        /* #News style */
+        /* #News style */
+        /* #News style */
+        /* #News style */
+        #News {
+            position: relative;
+            width: 100%;
+            height: 60vw;
+            max-height: 100vh;
+            border: 1px solid white;
+            overflow: hidden;
+        }
+
+        #News h2 {
+            margin-top: 7%;
+            font-size: 2.8vw;
+            position: relative;
+            color: black;
+            left: 17%;
+        }
+
+        #News .newsWrap {
+            margin-top: 3%;
+            position: relative;
+            width: 200%;
+            height: 55%;
+            margin-left: 17%;
+            bottom: 0;
+            overflow: hidden;
+            display: flex;
+
+        }
+
+        #News .newsWrap .content {
+            position: relative;
+            width: 15%;
+            height: 100%;
+            margin-right: 1.25%;
+            /* border: 1px solid black; */
+        }
+
+        #News .newsWrap .date {
+            position: relative;
+            width: 5.5vw;
+            height: 2vw;
+            border-radius: 6px;
+            font-size: 0.8vw;
+            font-weight: 600;
+            color: #5c5c5c;
+            background-color: #eaeaea;
+            padding-top: 0.5vw;
+            text-align: center;
+        }
+
+        #News .newsWrap h3 {
+            margin-top: 2%;
+            color: black;
+            font-size: 1.7vw;
+        }
+
+        #News .newsWrap .img {
+            margin-top: 5%;
+            width: 100%;
+            height: 60%;
+            border-radius: 15px;
+            box-shadow: 2px 2px 10px 0px rgb(170, 170, 170);
+        }
+
+        #News .newsWrap :nth-of-type(1) .img {
+            background: url(https://d37v4gwq2080el.cloudfront.net/dev/upload/news/1721885440051_1667550541375_%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%93%9C5.JPG)no-repeat center/cover;
+
+        }
+
+        #News .newsWrap :nth-of-type(2) .img {
+            background: url(https://d37v4gwq2080el.cloudfront.net/dev/upload/news/1721885440051_1667550541375_%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%93%9C5.JPG)no-repeat center/cover;
+
+        }
+
+        #News .newsWrap :nth-of-type(3) .img {
+            background: url(https://d37v4gwq2080el.cloudfront.net/dev/upload/news/1721885371537_1638498743329_ide3.png)no-repeat center/cover;
+
+        }
+
+        #News .newsWrap :nth-of-type(4) .img {
+            background: url(https://d37v4gwq2080el.cloudfront.net/dev/upload/news/1721885275611_1667551041256_CK_ti289a15218_n_l.jpg)no-repeat center/cover;
+
+        }
+
+        #News .newsWrap :nth-of-type(5) .img {
+            background: url(https://d37v4gwq2080el.cloudfront.net/dev/upload/news/1721885016617_1667551026264_CK_ti219a39612_n_l.jpg)no-repeat center/cover;
+
+        }
+
+
+        #News .line {
+            position: relative;
+            width: 67%;
+            height: 1px;
+            background-color: #645757;
+            opacity: 0.6;
+            margin: 0 auto;
+        }
+
+        #News .btn {
+            position: relative;
+            width: 10%;
+            bottom: -3%;
+            left: 78%;
+        }
+
+        #News .btn i {
+            margin-right: 0.5vw;
+            position: relative;
+            /* left: 0; */
+            font-size: 2.6vw;
+            color: #7A7A7A;
+            cursor: pointer;
+        }
+
+
+        /* footer style*/
+        #wrapper footer {
+            background-color: black;
+            width: 100%;
+            height: 250px;
+        }
+
+        #wrapper footer div {
+            width: 80%;
+            margin: 0 auto;
+            padding: 60px;
+        }
+
+        #wrapper footer h2 {
+            font-size: 45px;
+        }
+
+        #wrapper footer p {
+            padding: 10px;
+            font-size: 15px;
+        }
+
+        /* 반응형 웹 style */
+        /* 반응형 웹 style */
+        /* 반응형 웹 style */
+        /* 반응형 웹 style */
+        /* 반응형 웹 style */
+        /* 반응형 웹 style */
+
+        @media (max-width: 1200px) {
+            .mainMenu {
+                margin-top: 1.5vw;
+            }
+        }
+
+        @media (max-width: 999px) {
+            #wrapHeader {
+                position: fixed;
+                width: 100%;
+                height: 100px;
+                z-index: 1000;
+                transition: background-color 0.3s;
+            }
+
+            #wrapper header .gnb {
+                display: none;
+            }
+
+            .right_menu {
+                display: none;
+            }
+
+            header .logo {
+
+                width: 18%;
+                height: 95%;
+                margin-left: 5%;
+            }
+
+            #wrapper label {
+                display: block;
+
+            }
+
+            @keyframes slideIn {
+                0% {
+                    right: -100%;
+                    /* 메뉴가 화면 밖에 위치 */
+                }
+
+                100% {
+                    right: 0;
+                    /* 메뉴가 화면에 정상적으로 표시 */
+                }
+            }
+
+            @keyframes slideOut {
+                0% {
+                    right: 0;
+                    /* 메뉴가 화면에 정상적으로 표시 */
+                }
+
+                100% {
+                    right: -100%;
+                    /* 메뉴가 화면 밖으로 이동 */
+                }
+            }
+
+            #wrapper .lettle_menu {
+                position: absolute;
+                float: right;
+                width: 80%;
+                height: 100vh;
+                background-color: #020417;
+                right: 0px;
+                right: -100%;
+                /* 처음에는 메뉴가 화면 밖에 위치 */
+                top: 0px;
+            }
+
+
+
+            #wrapper input[type="checkbox"]:checked~.lettle_menu {
+                display: block;
+                /* 체크박스가 체크되면 메뉴를 표시 */
+                animation: slideIn 0.5s ease forwards;
+                /* 슬라이드 인 애니메이션 */
+            }
+
+            #wrapper input[type="checkbox"]:not(:checked)~.lettle_menu {
+                display: none;
+                /* 체크박스가 체크되지 않으면 메뉴를 표시 */
+                animation: slideOut 0.5s ease forwards;
+                /* 슬라이드 아웃 애니메이션 */
+            }
+
+            .lettle_menu .lettle_menu_wrapper {
+                position: relative;
+                top: 15%;
+                width: 80%;
+                height: 50vh;
+                overflow-y: scroll;
+                margin: 0 auto;
+
+            }
+
+            .lettle_menu .lettle_menu_wrapper::-webkit-scrollbar {
+                display: none;
+                /* 스크롤 바를 숨깁니다 */
+            }
+
+            #wrapper .lettle_menu ul li {
+                width: 100%;
+                line-height: 180px;
+                font-size: 3em;
+            }
+
+            #wrapper .lettle_menu ul li:first-child {
+                line-height: 60px;
+            }
+
+            #wrapper .lettle_menu ul li:last-child {
+                line-height: 60px;
+            }
+
+            #wrapper .lettle_menu label {
+                z-index: 99;
+
+            }
+
+            .lettle_menu .language {
+                position: absolute;
+                border: 1px solid rgba(255, 255, 255, 0.548);
+                width: 200px;
+                height: 90px;
+                left: 11%;
+                bottom: 23%;
+                font-size: 2.3em;
+                line-height: 115px;
+                border-radius: 22px;
+            }
+
+            .lettle_menu .language span {
+                font-size: 1.4em;
+            }
+
+            .lettle_menu .language {
+                padding-left: 15px;
+            }
+
+            .lettle_menu .language p {
+                position: absolute;
+                bottom: -18%;
+                left: 40%;
+
+            }
+
+            /* #about style */
+            /* #about style */
+            /* #about style */
+            /* #about style */
+            /* #about style */
+            #about {
+                width: 100%;
+                height: 120vw;
+                position: relative;
+
+            }
+
+            #about .about_introduce {
+                top: 100px;
+                position: relative;
+                text-align: center;
+            }
+
+            #about .about_introduce h1 {
+                font-size: 17vw;
+                margin-bottom: 4.1vw;
+            }
+
+            #about .about_introduce .line {
+                width: 80%;
+                height: 1px;
+                background-color: white;
+                opacity: 0.6;
+                margin: 0 auto;
+            }
+
+            #about .about_introduce p {
+                margin-top: 7.8vw;
+                font-size: 3.3vw;
+                line-height: 7vw;
+                padding: 0 10%;
+            }
+
+            /* #Resources style */
+            /* #Resources style */
+            /* #Resources style */
+            /* #Resources style */
+            /* #Resources style */
+
+            #Resources {
+                position: relative;
+                width: 100%;
+                height: 81vw;
+                background-color: #f5f5f5;
+                overflow: hidden;
+            }
+
+            #Resources .ResourcesWrap {
+                position: relative;
+                width: 90%;
+                height: 100%;
+                /* left: calc(50% - 35%); */
+                margin-left: 17%;
+                bottom: 0;
+                overflow: hidden;
+            }
+
+            #Resources .ResourcesWrap h2 {
+                margin-top: 7.5vw;
+                font-size: 3.3vw;
+                position: relative;
+                color: black;
+            }
+
+            #Resources .ResourcesWrap .downloadBox {
+                position: relative;
+                width: 400%;
+                height: 70%;
+                display: flex;
+                margin-top: 3%;
+
+            }
+
+            #Resources .ResourcesWrap .downloadBox div {
+                position: relative;
+                width: 25%;
+                height: 100%;
+
+            }
+
+            #Resources .ResourcesWrap .downloadBox div .img {
+                width: 74%;
+                height: 65%;
+                border-radius: 10px;
+                box-shadow: 2px 2px 10px 0px rgb(170, 170, 170);
+            }
+
+            #Resources .ResourcesWrap .downloadBox div h3,
+            #Resources .ResourcesWrap .downloadBox div p {
+                color: black;
+                position: relative;
+                left: 1%;
+            }
+
+            #Resources .ResourcesWrap .downloadBox div h3 {
+                font-size: 4.7vw;
+                margin-top: 3.5%;
+            }
+
+            #Resources .ResourcesWrap .downloadBox div p {
+                font-size: 2.95vw;
+                margin-top: 2%;
+                font-weight: 700;
+                color: #626262;
+
+            }
+
+            #Resources .ResourcesWrap .downloadBox div .icon {
+                width: 5.5vw;
+                height: 5.5vw;
+                background: url(https://solution-dev.link/admin/static/kor/assets/images/icon/c-download-bk.svg)no-repeat center/cover;
+                position: absolute;
+                right: 25.5%;
+                bottom: 10.5%;
+                cursor: pointer;
+            }
+
+            #Resources .ResourcesWrap .line {
+                width: 76%;
+                height: 1px;
+                position: relative;
+                background-color: #7A7A7A;
+                margin-top: -3%;
+            }
+
+            #Resources .btn {
+                position: relative;
+                width: 100%;
+                bottom: -3%;
+                left: 42.5%;
+                display: none;
+            }
+
+            #Resources .btn i {
+                margin-right: 2vw;
+                position: relative;
+
+                font-size: 7.6vw;
+                color: #7A7A7A;
+                cursor: pointer;
+                opacity: 1;
+            }
+
+            /* Video style */
+            /* Video style */
+            /* Video style */
+            /* Video style */
+            /* Video style */
+
+            #Video {
+                position: relative;
+                width: 100%;
+                height: 51vw;
+                background: url(https://solution-dev.link/admin/static/kor/assets/images/solutions/c-video-bg.png)no-repeat center/cover;
+            }
+
+            #Video .Videowarp {
+                width: 84%;
+                height: 100%;
+                margin: 0 auto;
+            }
+
+            #Video h2 {
+                top: 7.5vw;
+                font-size: 2.8vw;
+                position: absolute;
+            }
+
+            #Video .VideoBox {
+                width: 48%;
+                height: 45%;
+                position: relative;
+                top: 35%;
+                background: url(https://d37v4gwq2080el.cloudfront.net/dev/upload/video/1721901876772_c-video-img.png)no-repeat center/cover;
+                border-radius: 10px;
+                cursor: pointer;
+            }
+
+            #Video .VideoBox h2 {
+                position: relative;
+                left: 6%;
+                font-size: 4.2vw;
+                top: 56%;
+                margin-bottom: 1%;
+            }
+
+            #Video .VideoBox p {
+                position: relative;
+                left: 5%;
+                font-size: 0.9vw;
+                font-weight: 700;
+                top: 56%;
+                border-radius: 30px;
+                background-color: rgba(0, 0, 0, 0.5);
+                width: 55%;
+                padding: 1.25% 1.5%;
+                text-align: center;
+
+            }
+
+            #Video .VideoBox i {
+                position: absolute;
+                font-size: 5vw;
+                right: 7%;
+                bottom: 11%;
+                cursor: pointer;
+                transition: color 0.28s;
+            }
+
+            #Video .VideoBox i:hover {
+                color: #7A7A7A;
+
+            }
+
+            #Video .VideoBox2 {
+                width: 48%;
+                height: 45%;
+                position: relative;
+                left: 50%;
+                background: url(https://d37v4gwq2080el.cloudfront.net/dev/upload/video/1721901876772_c-video-img.png)no-repeat center/cover;
+                border-radius: 10px;
+                cursor: pointer;
+            }
+
+            #Video .VideoBox2 h2 {
+                position: relative;
+                left: 6%;
+                font-size: 4.2vw;
+                top: 56%;
+                margin-bottom: 1%;
+            }
+
+            #Video .VideoBox2 p {
+                position: relative;
+                left: 5%;
+                font-size: 0.9vw;
+                font-weight: 700;
+                top: 56%;
+                border-radius: 30px;
+                background-color: rgba(0, 0, 0, 0.5);
+                width: 55%;
+                padding: 1.25% 1.5%;
+                text-align: center;
+
+            }
+
+            #Video .VideoBox2 i {
+                position: absolute;
+                font-size: 5vw;
+                right: 7%;
+                bottom: 11%;
+                cursor: pointer;
+                transition: color 0.28s;
+            }
+
+            #Video .VideoBox2 i:hover {
+                color: #7A7A7A;
+
+            }
+
+
+
+
+            /* #References style */
+            /* #References style */
+            /* #References style */
+            /* #References style */
+            /* #References style */
+            #References {
+                position: relative;
+                width: 100%;
+                height: 70vw;
+                max-height: 100vh;
+                background-color: aliceblue;
+                overflow-x: hidden;
+            }
+
+            #References .ReferencesImg {
+                margin-top: 1%;
+                position: relative;
+                width: 200%;
+                height: 65%;
+                /* border: 1px solid red; */
+                display: flex;
+                justify-content: space-around;
+            }
+
+            #References .ReferencesImg .company {
+                float: left;
+                width: 30%;
+                height: 90%;
+                border-radius: 15px;
+                margin-top: 0.5%;
+                margin-right: 1%;
+                margin-left: 1%;
+                box-shadow: 2px 2px 10px 0px rgb(170, 170, 170);
+                background-color: white;
+            }
+
+            #References .ReferencesImg .company h3 {
+                position: relative;
+                font-size: 2.1vw;
+                color: black;
+                text-align: center;
+                margin-top: 8%;
+                padding: 0 10%;
+            }
+
+            #References .ReferencesImg .company p {
+                position: relative;
+                color: black;
+                text-align: center;
+                font-size: 1.8vw;
+                padding: 5% 15%;
+            }
+
+
+            #References i {
+                margin-right: 2vw;
+                margin-top: 3%;
+                position: relative;
+                font-size: 7.6vw;
+                left: 65.5%;
+                cursor: pointer;
+                color: #7A7A7A;
+                cursor: pointer;
+                z-index: 99;
+                display: inline-block;
+            }
+
+            /* #news style */
+            /* #news style */
+            /* #news style */
+            /* #news style */
+            /* #news style */
+            #News {
+                position: relative;
+                width: 100%;
+                height: 80vw;
+                max-height: 100vh;
+                border: 1px solid white;
+                overflow: hidden;
+            }
+
+            #News h2 {
+                margin-top: 7%;
+                font-size: 2.8vw;
+                position: relative;
+                color: black;
+                left: 17%;
+            }
+
+            #News .newsWrap {
+                margin-top: 3%;
+                position: relative;
+                width: 300%;
+                height: 55%;
+                margin-left: 3%;
+                bottom: 0;
+                overflow: hidden;
+                display: flex;
+
+
+            }
+
+            #News .newsWrap .content {
+                position: relative;
+                width: 15%;
+                height: 100%;
+                margin-right: 1.25%;
+                /* border: 1px solid black; */
+            }
+
+            #News .newsWrap .date {
+                position: relative;
+                width: 10.5vw;
+                height: 3vw;
+                border-radius: 6px;
+                font-size: 2vw;
+                font-weight: 600;
+                color: #5c5c5c;
+                background-color: #eaeaea;
+                padding-top: 0.3vw;
+                text-align: center;
+            }
+
+            #News .newsWrap h3 {
+                margin-top: 2%;
+                color: black;
+                font-size: 2.5vw;
+            }
+
+            #News .newsWrap .img {
+                margin-top: 3%;
+                width: 100%;
+                height: 65%;
+                border-radius: 15px;
+                min-height: none;
+                box-shadow: 2px 2px 10px 0px rgb(170, 170, 170);
+            }
+
+            #News .line {
+                position: relative;
+                width: 92%;
+                height: 1px;
+                background-color: #645757;
+                opacity: 0.6;
+                margin: 0 auto;
+            }
+
+            #News .btn {
+                position: relative;
+                width: 30%;
+                bottom: -4%;
+                left: 65.5%;
+            }
+
+            #News .btn i {
+                margin-right: 2vw;
+                position: relative;
+                /* left: 0; */
+                font-size: 7.6vw;
+                color: #7A7A7A;
+                cursor: pointer;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrapper">
+        <!-- header nav bar -->
+        <div id="wrapHeader">
+            <header>
+                <a class="logo" href="">LG CNS Solution</a>
+
+                <nav class="gnb">
+                    <ul class="mainMenu">
+                        <li><a href="#">Solutions ∨</a></li>
+                    </ul>
+                    <ul class="scrollNav">
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#Resources">Resources</a></li>
+                        <li><a href="#Video">Video</a></li>
+                        <li><a href="#References">References</a></li>
+                        <li><a href="#News">News</a></li>
+                    </ul>
+                </nav>
+                <div class="right_menu">
+                    <p>Policy.</p>
+                    <div class="language">
+
+                        <span class="material-symbols-outlined">
+                            language
+                        </span><a>KOR</a>
+                    </div>
+                </div>
+            </header>
+            <input type="checkbox" id="toggle">
+            <label for="toggle">
+                <span class="material-symbols-outlined">
+                    menu
+                </span>
+            </label>
+
+            <nav class="lettle_menu">
+                <a href="">
+                    <label for="toggle">
+                        <span class="material-symbols-outlined">
+                            close
+                        </span>
+                    </label></a>
+                <div class="lettle_menu_wrapper">
+                    <ul>
+                        <li>Cloud Middleware <br> Platform</li>
+                        <li>Testing Solution</li>
+                        <li>DevOn</li>
+                        <li>Web3</li>
+                    </ul>
+
+                </div>
+                <a class="language" href=""><span class="material-symbols-outlined">
+                        language
+                    </span>
+                    <p>KOR</p>
+                </a>
+            </nav>
+        </div>
+        <section id="about">
+            <div class="about_introduce">
+                <h1>DevOn IDE</h1>
+                <div class="line"></div>
+                <p>DevOn IDE는 분석부터 단위 테스트까지 전 개발 과정을 중단 없이 연결하고, <br>
+
+                    자동화를 통해 작업 흐름이 끊김이 없이 유지되게 하는<br>
+
+                    LG CNS의 통합 개발 플랫폼입니다.<br>
+
+                    공정 별로 다양한 도구를 제공하며,<br>
+
+                    작업 결과 및 작업 로그를 한눈에 볼 수 있는 통합 Repository 기반의 데이터 분석 뷰를 통해<br>
+
+                    개발 범위, 진척 상황, 품질을 실시간으로 확인할 수 있습니다.</p>
+            </div>
+
+        </section>
+        <section id="Resources">
+            <div class="ResourcesWrap ">
+                <h2>Resources</h2>
+                <div class="downloadBox">
+                    <div class="download1">
+                        <div class="img"></div>
+                        <h3>Brochure</h3>
+                        <p>DevOn IDE 브로슈어</p>
+                        <i class="icon"></i>
+                    </div>
+
+
+                </div>
+
+                <div class="line"></div>
+                <div class="btn">
+                    <i class="fa-solid fa-circle-chevron-left"></i>
+                    <i class="fa-solid fa-circle-chevron-right"></i>
+                </div>
+            </div>
+        </section>
+        <section id="Video">
+            <div class="Videowarp">
+                <h2>Video</h2>
+                <div class="VideoBox">
+                    <h2>DevOn IDE</h2>
+                    <p>직접 기능을 설정하고 모델링하는 MDD</p>
+                    <i class="fa-solid fa-play"></i>
+                </div>
+                <div class="VideoBox2">
+                    <h2>DevOn IDE</h2>
+                    <p>DevOn IDE MDD 기술</p>
+                    <i class="fa-solid fa-play"></i>
+                </div>
+            </div>
+        </section>
+        <section id="References">
+            <h2>References</h2>
+            <div class="ReferencesImg">
+                <div class="company">
+                    <div class="img"></div>
+                    <h3>  한국은행 차세대 구축적용  </h3>
+                    <p>코볼 역공학과 MDD 개발방법론 적용 </p>
+                </div>
+                <div class="company">
+                    <div class="img"></div>
+                    <h3> 토스뱅크 IT시스템 구축 </h3>
+                    <p>MDD 개발방법론 적용 </p>
+                </div>
+                <div class="company">
+                    <div class="img"></div>
+                    <h3>  제주은행 차세대 구축적용  </h3>
+                    <p>코볼 역공학과 MDD 개발방법론 적용 </p>
+                </div>
+                <div class="company">
+                    <div class="img"></div>
+                    <h3> 한국은행 차세대 구축적용 </h3>
+                    <p>코볼 역공학과 MDD 개발방법론 적용 </p>
+                </div>
+            </div>
+            <div class="line"></div>
+            <div class="btn">
+                <i class="fa-solid fa-circle-chevron-left"></i>
+                <i class="fa-solid fa-circle-chevron-right"></i>
+            </div>
+
+
+
+        </section>
+        <section id="News">
+            <h2>News</h2>
+            <div class="newsWrap">
+                <div class="content">
+                    <div class="date">2020.04.30</div>
+                    <h3>“차세대 국유재산관리시스템 구축사업" 수주 - DevOn IDE 적용</h3>
+                    <div class="img"></div>
+                </div>
+                <div class="content">
+                    <div class="date">2020.03.31</div>
+                    <h3>“차세대 지능형교정정보시스템 구축사업" 수주 - DevOn IDE 적용</h3>
+                    <div class="img"></div>
+                </div>
+                <div class="content">
+                    <div class="date">2018.04.02</div>
+                    <h3>LG CNS, MDD기술 국내공공사업•해외금융권으로 확대</h3>
+                    <div class="img"></div>
+                </div>
+                <div class="content">
+                    <div class="date">2017.01.19</div>
+                    <h3>LG CNS의 금융권 공략 비책 - DevOn IDE 의 적용</h3>
+                    <div class="img"></div>
+                </div>
+                <div class="content">
+                    <div class="date">2017.01.19</div>
+                    <h3>LG CNS, 코딩없는 프로그램 자동개발 기술 적용 프로젝트 400개 돌파</h3>
+                    <div class="img"></div>
+                </div>
+            </div>
+            <div class="line"></div>
+            <div class="btn">
+                <i class="fa-solid fa-circle-chevron-left"></i>
+                <i class="fa-solid fa-circle-chevron-right"></i>
+            </div>
+
+        </section>
+        <footer>
+            <div>
+                <h2> Contact Us</h2>
+                <p>solutionunit@lgcns.com</p>
+                <hr>
+                <p>&copy;Gate, LG CNS, All rights reserved</p>
+            </div>
+        </footer>
+
+    </div>
+
+</body>
+<script>
+    $(function () {
+        const ResourcesNextBtn = $("#Resources .btn .fa-circle-chevron-right")
+        const ResourcesPreBtn = $("#Resources .btn .fa-circle-chevron-left")
+        const downloadBox = $(".downloadBox")
+        const downloadBoxDiv = $(".downloadBox div")
+        const ReferencesNextBtn = $("#References .btn .fa-circle-chevron-right")
+        const ReferencesPreBtn = $("#References .btn .fa-circle-chevron-left")
+        const ReferencesImg = $(".ReferencesImg")
+        const ReferencesImgBox = $("#References .ReferencesImg .company")
+        const NewsNextBtn = $("#News i.fa-circle-chevron-right")
+        const NewsPreBtn = $("#News i.fa-circle-chevron-left")
+        const NewsContent = $("#News .newsWrap .content")
+        const wrapHeader = $("#wrapHeader")
+        const SolutionText = $('.mainMenu a')
+        const logo = $('header .logo')
+        const scrollNav = $('.scrollNav')
+        const litteMenuIcon = $('#wrapper label span')
+        const scrollNavMenu = $('.scrollNav li a')
+        const section = $('section')
+
+        let downloadBoxPage = 0
+        let ReferencesImgPage = 0
+        let NewsImgPage = 0
+        let NewsCurrentLeft = 0
+        let ReferencesCurrentLeft = 0
+        let downloadCurrentLeft = 0
+        let downloadBoxWidth = downloadBoxDiv.width();
+        let ReferencesImgWidth = ReferencesImgBox.outerWidth(true)
+        let ReferencesImgMaxWidth = -ReferencesImg.width() / 2
+        let downloadBoxMaxWidth = -downloadBox.width() / 2
+        let NewsMaxWidth = NewsContent.width() / 2
+        let NewsImgWidth = NewsContent.outerWidth(true)
+
+        $(window).resize(function () {
+            downloadBoxMaxWidth = -downloadBox.width() / 2
+        })
+        $(window).resize(function () {
+            downloadBoxWidth = downloadBoxDiv.width()
+        })
+
+        $(window).resize(function () {
+            ReferencesImgWidth = ReferencesImgBox.outerWidth(true)
+        })
+        $(window).resize(function () {
+            ReferencesImgMaxWidth = -ReferencesImg.width() / 2
+        })
+
+
+
+        // Resources section control
+        ResourcesNextBtn.click(function () {
+            // ReferencesImg의 전체 너비와 현재 위치를 고려하여 마지막 항목에 도달했는지 확인
+            if (downloadCurrentLeft > downloadBoxMaxWidth - downloadBoxWidth) {
+                downloadCurrentLeft -= downloadBoxWidth;
+                downloadBox.stop().animate({ "left": downloadCurrentLeft }, 500);
+            }
+        });
+        ResourcesPreBtn.click(function () {
+            if (downloadCurrentLeft < 0) {
+                downloadCurrentLeft += downloadBoxWidth;
+                downloadBox.stop().animate({ "left": downloadCurrentLeft }, 500)
+            }
+
+        })
+
+        // References section control
+        ReferencesNextBtn.click(function () {
+            // ReferencesImg의 전체 너비와 현재 위치를 고려하여 마지막 항목에 도달했는지 확인
+            if (ReferencesImgPage<2) {
+                ReferencesCurrentLeft -= ReferencesImgWidth;
+                ReferencesImg.stop().animate({ "left": ReferencesCurrentLeft }, 500);
+                ReferencesImgPage++
+
+            }
+        });
+
+        ReferencesPreBtn.click(function () {
+            // 처음 위치로 돌아갈 수 있는지 확인
+            if (ReferencesCurrentLeft < 0) {
+                ReferencesCurrentLeft += ReferencesImgWidth;
+                ReferencesImg.stop().animate({ "left": ReferencesCurrentLeft }, 500);
+                ReferencesImgPage--
+            }
+        });
+
+
+
+        // News section control
+        NewsNextBtn.click(function () {
+            if (NewsImgPage < 3) {
+                NewsCurrentLeft -= NewsImgWidth;
+                NewsContent.stop().animate({ "left": NewsCurrentLeft }, 500);
+                NewsImgPage++
+            }
+        });
+
+        NewsPreBtn.click(function () {
+            if (NewsCurrentLeft < -1) {
+                NewsCurrentLeft += NewsImgWidth;
+                NewsContent.stop().animate({ "left": NewsCurrentLeft }, 500);
+                NewsImgPage--
+            }
+        });
+
+        // Header height on resize
+        let wrapHeaderHeight = wrapHeader.height()
+
+        $(window).resize(function () {
+            wrapHeaderHeight = wrapHeader.height()
+            location.reload();
+        })
+
+        // Scroll event
+        $(window).on('scroll', function () {
+            // Change header style when scrolling
+            if ($(this).scrollTop() > 0) {
+                wrapHeader.css('background-color', 'white');
+                SolutionText.css('color', 'black');
+                logo.css('background', 'url(https://solution-dev.link/admin/static/kor/assets/images/icon/h-logo-bk.png) no-repeat center/contain');
+                scrollNav.css('background-color', '#F2F1F8');
+                litteMenuIcon.eq(0).css('color', 'black');
+            } else {
+                wrapHeader.css('background-color', '');
+                SolutionText.css('color', '');
+                logo.css('background', '');
+                scrollNav.css('background-color', '');
+                litteMenuIcon.css('color', '');
+            }
+
+            // Scroll position for navigation
+            let section1 = section.eq(0).offset().top - wrapHeaderHeight
+            let section2 = section.eq(1).offset().top - wrapHeaderHeight
+            let section3 = section.eq(2).offset().top - wrapHeaderHeight
+            let section4 = section.eq(3).offset().top - wrapHeaderHeight
+            let section5 = section.eq(4).offset().top - wrapHeaderHeight
+
+            // Fix: Scroll event should use $(this).scrollTop() instead of res.scrollTop()
+            if ($(this).scrollTop() >= section5) {
+                scrollNavMenu.css('color', '');
+                scrollNavMenu.eq(4).css('color', '#4739ac');
+            } else if ($(this).scrollTop() >= section4) {
+                scrollNavMenu.css('color', '');
+                scrollNavMenu.eq(3).css('color', '#4739ac');
+            } else if ($(this).scrollTop() >= section3) {
+                scrollNavMenu.css('color', '');
+                scrollNavMenu.eq(2).css('color', '#4739ac');
+            } else if ($(this).scrollTop() >= section2) {
+                scrollNavMenu.css('color', '');
+                scrollNavMenu.eq(1).css('color', '#4739ac');
+            } else if ($(this).scrollTop() == 0) {
+                scrollNavMenu.css('color', '');
+            } else if ($(this).scrollTop() >= section1) {
+                scrollNavMenu.css('color', '');
+                scrollNavMenu.eq(0).css('color', '#4739ac');
+            } else {
+                scrollNavMenu.css('color', '');
+            }
+        });
+
+    })
+
+</script>
+
+</html>
