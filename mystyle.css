@@ -69,7 +69,7 @@ header .logo {
     float: left;
     line-height: 90px;
     width: 10%;
-    background: url(https://solution-dev.link/admin/static/kor/assets/images/icon/h-logo.png)no-repeat center/contain;
+    background: url(./logo.png)no-repeat center/contain;
     height: 70%;
     margin-top: 1.15vw;
     text-indent: -9999px;
@@ -103,6 +103,7 @@ header .logo {
     height: 100%;
     font-size: 1.35vw;
     font-weight: 600;
+    color: #6b6b6b;
     /* color: black; */
 
 
