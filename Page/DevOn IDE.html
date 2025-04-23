@@ -73,7 +73,7 @@
             float: left;
             line-height: 90px;
             width: 10%;
-            background: url(https://solution-dev.link/admin/static/kor/assets/images/icon/h-logo.png)no-repeat center/contain;
+            background: url(../logo.png)no-repeat center/contain;
             height: 70%;
             margin-top: 1.15vw;
             text-indent: -9999px;
@@ -108,6 +108,7 @@
             height: 100%;
             font-size: 1.35vw;
             font-weight: 600;
+            color: #6b6b6b;
             /* color: black; */
 
 
@@ -1398,11 +1399,11 @@
         <!-- header nav bar -->
         <div id="wrapHeader">
             <header>
-                <a class="logo" href="">LG CNS Solution</a>
+                <a class="logo" href="../index.html">LG CNS Solution</a>
 
                 <nav class="gnb">
                     <ul class="mainMenu">
-                        <li><a href="#">Solutions ∨</a></li>
+                        <li><a href="#">Solutions</a></li>
                     </ul>
                     <ul class="scrollNav">
                         <li><a href="#about">About</a></li>
@@ -1706,7 +1707,7 @@
             if ($(this).scrollTop() > 0) {
                 wrapHeader.css('background-color', 'white');
                 SolutionText.css('color', 'black');
-                logo.css('background', 'url(https://solution-dev.link/admin/static/kor/assets/images/icon/h-logo-bk.png) no-repeat center/contain');
+                logo.css('background', 'url(../logo.png) no-repeat center/contain');
                 scrollNav.css('background-color', '#F2F1F8');
                 litteMenuIcon.eq(0).css('color', 'black');
             } else {
